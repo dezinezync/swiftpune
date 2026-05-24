@@ -505,8 +505,9 @@ body.is-scrolled .site-nav__inner { height: var(--nav-h-compact); }
 .section--stack      { background: var(--surface-1); }
 .section--pillars    { background: var(--surface-0); }
 .section--meetups    { background: var(--surface-0); }
-.section--first      { background: var(--surface-1); }
-.section--organizers { background: var(--surface-0); }
+.section--recent     { background: var(--surface-1); }
+.section--first      { background: var(--surface-0); }
+.section--organizers { background: var(--surface-1); }
 .section--sponsors   { background: var(--surface-0); padding-top: 0; }
 .section--values     { background: var(--surface-1); }
 
@@ -711,6 +712,162 @@ body.is-scrolled .site-nav__inner { height: var(--nav-h-compact); }
   font-style: italic;
 }
 
+/* ---------- 10b. Recent meetup (S002 recap) ------------------------- */
+
+.section--recent .section-head { margin-bottom: var(--s-7); }
+
+.recap {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: var(--s-7);
+  align-items: start;
+}
+
+.recap__agenda {
+  list-style: none;
+  display: grid;
+  gap: 0;
+  background: var(--surface-2);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-2);
+  padding: var(--s-3) var(--s-5);
+}
+.recap__row {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: var(--s-5);
+  padding: var(--s-4) 0;
+  border-bottom: 1px dashed var(--hairline);
+  align-items: start;
+}
+.recap__row:last-child { border-bottom: 0; }
+.recap__time {
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  color: var(--accent);
+  font-weight: 600;
+  padding-top: 2px;
+}
+.recap__type {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-mute);
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+}
+.recap__title {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  color: var(--ink);
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+.recap__by {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.45;
+  margin-bottom: var(--s-2);
+}
+.recap__by a {
+  color: var(--ink);
+  text-decoration-color: var(--accent);
+  text-underline-offset: 3px;
+}
+.recap__by a:hover { color: var(--accent-deep); }
+
+.recap__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 0.3rem 0.65rem;
+  margin-top: 2px;
+  margin-right: 6px;
+  border: 1px solid var(--accent-tint);
+  background: var(--surface-0);
+  border-radius: var(--r-pill);
+  transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+.recap__link:hover {
+  background: var(--accent);
+  color: #FFF;
+  border-color: var(--accent);
+}
+.recap__repos { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* Row-type accents — subtle left edge color */
+.recap__row--talk    .recap__time { color: var(--accent); }
+.recap__row--sponsor .recap__time { color: var(--bubble-orange); }
+.recap__row--lab     .recap__time { color: var(--bubble-teal); }
+.recap__row--break   .recap__time { color: var(--ink-mute); }
+.recap__row--check   .recap__time { color: var(--ink-mute); }
+.recap__row--close   .recap__time { color: var(--ink-mute); }
+
+.recap__meta {
+  background: var(--surface-2);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-lg);
+  padding: var(--s-6);
+  box-shadow: var(--shadow-1);
+  position: sticky;
+  top: calc(var(--nav-h) + var(--s-4));
+}
+.recap__meta-block { display: grid; gap: 6px; }
+.recap__meta-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-mute);
+  letter-spacing: 0.02em;
+}
+.recap__meta-title {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  color: var(--ink);
+  font-weight: 700;
+}
+.recap__meta-body {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.recap__meta-pin {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--ink-mute);
+  margin-top: 2px;
+}
+.recap__meta-pin .dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(233, 75, 107, 0.18);
+}
+.recap__meta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-decoration: none;
+  margin-top: 4px;
+}
+.recap__meta-link:hover { color: var(--accent-deep); text-decoration: underline; text-underline-offset: 3px; }
+.recap__meta-link--strong { font-weight: 600; }
+.recap__meta-divider {
+  height: 1px;
+  background: var(--hairline);
+  margin: var(--s-5) 0;
+}
+
 /* ---------- 11. First time --------------------------------------------- */
 
 .bubble {
@@ -795,31 +952,63 @@ body.is-scrolled .site-nav__inner { height: var(--nav-h-compact); }
 
 .organizers-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: var(--s-4);
   margin: var(--s-7) auto var(--s-5);
   max-width: 920px;
 }
+.organizers-grid--seven {
+  max-width: 1180px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
 .org-card {
+  display: block;
   text-align: center;
   padding: var(--s-6) var(--s-4);
   background: var(--surface-2);
   border: 1px solid var(--hairline);
   border-radius: var(--r-md);
   box-shadow: var(--shadow-1);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    transform var(--dur-mid) var(--ease-out),
+    box-shadow var(--dur-mid) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out);
 }
+.org-card:hover,
+.org-card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-2);
+  border-color: var(--accent-tint);
+}
+.org-card:focus-visible { outline: none; box-shadow: var(--shadow-2), 0 0 0 3px var(--accent-tint); }
 .org-card--placeholder { color: var(--ink-faint); }
 .org-card__avatar {
-  width: 80px;
-  height: 80px;
+  width: 72px;
+  height: 72px;
   margin: 0 auto var(--s-4);
   display: grid;
   place-items: center;
+  border-radius: 50%;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  background: var(--accent-tint);
+  color: var(--accent-deep);
 }
 .org-card__avatar svg { width: 100%; height: 100%; }
+.org-card__avatar--coral  { background: var(--accent-tint);        color: var(--accent-deep); }
+.org-card__avatar--teal   { background: var(--bubble-teal-tint);   color: var(--bubble-teal); }
+.org-card__avatar--orange { background: var(--bubble-orange-tint); color: var(--bubble-orange); }
+.org-card__avatar--green  { background: var(--bubble-green-tint);  color: #5E8C1A; }
+.org-card__avatar--blue   { background: var(--bubble-blue-tint);   color: var(--bubble-blue); }
+.org-card__avatar--violet { background: #E6DEFA;                   color: var(--bubble-violet); }
+
 .org-card__role {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -827,9 +1016,15 @@ body.is-scrolled .site-nav__inner { height: var(--nav-h-compact); }
 }
 .org-card__name {
   font-family: var(--font-display);
-  font-size: 1rem;
+  font-size: 1.02rem;
+  color: var(--ink);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.org-card__about {
+  font-size: 0.86rem;
   color: var(--ink-mute);
-  font-weight: 500;
+  line-height: 1.4;
 }
 .organizers__cta {
   text-align: center;
@@ -1054,6 +1249,8 @@ html.js .reveal.is-visible {
   .hero__mark { align-items: flex-start; }
   .hero__logo-wrap { width: clamp(220px, 50vw, 360px); }
   .meetups { grid-template-columns: 1fr; }
+  .recap { grid-template-columns: 1fr; gap: var(--s-5); }
+  .recap__meta { position: static; }
   .site-footer__cluster { grid-template-columns: 1fr; gap: var(--s-6); }
 }
 
@@ -1081,7 +1278,12 @@ html.js .reveal.is-visible {
   .run-sheet li { grid-template-columns: 54px 1fr; padding: var(--s-3) 0; }
 
   .organizers-grid { grid-template-columns: repeat(2, 1fr); }
+  .organizers-grid--seven { grid-template-columns: repeat(2, 1fr); }
   .sponsor-tiers { gap: var(--s-3); }
+
+  .recap__agenda { padding: var(--s-2) var(--s-4); }
+  .recap__row { grid-template-columns: 58px 1fr; gap: var(--s-3); padding: var(--s-3) 0; }
+  .recap__meta { padding: var(--s-5); }
 
   .btn { padding: 0.85rem 1.3rem; font-size: 0.98rem; }
   .bubble--first { width: 320px; height: 320px; }
