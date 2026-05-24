@@ -8,20 +8,20 @@
       }
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#08080B" />
-    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#FAF7F2" />
+    <meta name="color-scheme" content="light" />
 
-    <title>SwiftPune — Where Pune codes in Swift</title>
+    <title>SwiftPune — An Apple-platform developer community in Pune.</title>
     <meta
       name="description"
-      content="SwiftPune is a community of iOS, macOS, visionOS, and Apple-platform developers in Pune — building, learning, and shipping together."
+      content="SwiftPune is a community of iOS, macOS, visionOS, and server-side Swift developers in Pune. We meet monthly to share craft, ship better, and welcome the next generation of Apple-platform builders."
     />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="SwiftPune — Where Pune codes in Swift" />
+    <meta property="og:title" content="SwiftPune — Apple-platform devs in Pune" />
     <meta
       property="og:description"
-      content="A community of Apple-platform developers in Pune. Meetups, talks, and a place to belong."
+      content="A community of iOS, macOS, visionOS, and server-side Swift developers in Pune. Meetups, talks, a place to belong."
     />
     <meta property="og:image" content="assets/SPLogo.png" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -30,12 +30,7 @@
     <link rel="icon" type="image/png" sizes="512x512" href="assets/SPLogo.png" />
     <link rel="apple-touch-icon" href="assets/SPLogo.png" />
 
-    <link
-      rel="preload"
-      as="image"
-      href="assets/SPLogo.png"
-      fetchpriority="high"
-    />
+    <link rel="preload" as="image" href="assets/SPLogo.png" fetchpriority="high" />
 
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/tokens.css" />
@@ -44,19 +39,31 @@
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
+    <!-- ===========================================================
+         Site nav
+         =========================================================== -->
     <header class="site-nav" id="siteNav" aria-label="Primary">
       <div class="site-nav__inner">
-        <a class="site-nav__brand" href="#top" aria-label="SwiftPune home">
-          <img src="assets/SPLogo.png" alt="" width="40" height="40" />
-          <span class="site-nav__wordmark">SwiftPune</span>
+        <a class="brand" href="#top" aria-label="SwiftPune home">
+          <span class="brand__mark">
+            <img src="assets/SPLogo.png" alt="" width="40" height="40" />
+          </span>
+          <span class="brand__word">
+            <span>SwiftPune</span>
+            <span class="brand__meta">v.2026 · Pune, IN</span>
+          </span>
         </a>
 
         <nav class="site-nav__links" aria-label="Sections">
           <a href="#about">About</a>
-          <a href="#events">Events</a>
-          <a href="#speakers">Speakers</a>
-          <a href="#sponsors">Sponsors</a>
-          <a href="#join" class="site-nav__cta">Join</a>
+          <a href="#stack">Stack</a>
+          <a href="#meetups">Meetups</a>
+          <a href="#first-time">First time?</a>
+          <a href="#values">Values</a>
+          <a href="https://lu.ma/swiftpune" target="_blank" rel="noopener" class="nav-cta">
+            Next meetup
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
         </nav>
 
         <button
@@ -74,383 +81,555 @@
       <div class="mobile-menu" id="mobileMenu" hidden>
         <nav aria-label="Mobile sections">
           <a href="#about">About</a>
-          <a href="#events">Events</a>
-          <a href="#speakers">Speakers</a>
+          <a href="#stack">Stack</a>
+          <a href="#meetups">Meetups</a>
+          <a href="#first-time">First time?</a>
+          <a href="#organizers">Organizers</a>
           <a href="#sponsors">Sponsors</a>
-          <a href="#join">Join</a>
+          <a href="#values">Values</a>
+          <a href="https://lu.ma/swiftpune" target="_blank" rel="noopener">Next meetup ↗</a>
         </nav>
       </div>
     </header>
 
     <main id="main">
+      <!-- ===========================================================
+           Hero — logo centerpiece + tech-coded headline + CTAs
+           =========================================================== -->
       <section class="hero" id="top">
-        <div class="hero__aurora" aria-hidden="true">
-          <span class="hero__blob hero__blob--violet"></span>
-          <span class="hero__blob hero__blob--teal"></span>
-          <span class="hero__blob hero__blob--orange"></span>
-          <span class="hero__blob hero__blob--magenta"></span>
-        </div>
+        <!-- Soft bubble blob behind the logo (decorative) -->
+        <span class="hero__blob hero__blob--accent" aria-hidden="true"></span>
+        <span class="hero__blob hero__blob--teal" aria-hidden="true"></span>
 
-        <div class="hero__content">
-          <img
-            class="hero__logo"
-            src="assets/SPLogo.png"
-            alt="SwiftPune"
-            width="720"
-            height="720"
-          />
-          <h1 class="hero__title">
-            Where Pune <span class="gradient-text gradient-text--cool">codes</span>
-            in <span class="gradient-text gradient-text--warm">Swift</span>.
-          </h1>
-          <p class="hero__sub">
-            A community of iOS, macOS, visionOS, and Apple-platform developers —
-            building, learning, and shipping together.
-          </p>
-          <div class="hero__cta">
-            <a
-              class="btn btn--primary"
-              href="https://lu.ma/swiftpune"
-              target="_blank"
-              rel="noopener"
-            >
-              Next meetup
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M5 12h14M13 5l7 7-7 7" />
-              </svg>
-            </a>
-            <a
-              class="btn btn--ghost"
-              href="https://discord.gg/swiftpune"
-              target="_blank"
-              rel="noopener"
-            >
-              Join community
-            </a>
+        <div class="hero__grid">
+          <div class="hero__mark">
+            <div class="hero__logo-wrap">
+              <img
+                class="hero__logo"
+                src="assets/SPLogo.png"
+                alt="SwiftPune"
+                width="680"
+                height="680"
+              />
+            </div>
+            <p class="hero__pin">
+              <span class="dot"></span>
+              <code>18.5204° N · 73.8567° E · IST</code>
+            </p>
           </div>
-        </div>
 
-        <a class="hero__scroll" href="#about" aria-label="Scroll to next section">
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true"
-          >
-            <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
-          </svg>
-        </a>
-      </section>
-
-      <section class="section about reveal" id="about">
-        <div class="container">
-          <p class="eyebrow gradient-text gradient-text--cool">About</p>
-          <h2 class="section__title">We're SwiftPune.</h2>
-          <p class="section__lead">
-            A Pune-based community for anyone curious about — or already deep into —
-            Apple's platforms. We meet to share talks, swap patterns, and help each
-            other ship better software.
-          </p>
-
-          <ul class="features">
-            <li class="feature">
-              <span class="feature__icon" aria-hidden="true">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path
-                    d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"
-                  />
-                  <path d="M4 19.5V21h16" />
-                </svg>
+          <div class="hero__copy">
+            <p class="comment-eyebrow">// Apple-platform devs · Pune · est. 2024</p>
+            <h1 class="hero__title">
+              An Apple-platform <span class="ink">community</span>, written in
+              <span class="hero__highlight">
+                Swift<span class="hero__highlight-dot">.</span>
               </span>
-              <h3 class="feature__title">Learn together</h3>
-              <p class="feature__body">
-                Talks, workshops, and Q&amp;A from people actively shipping on
-                Apple platforms.
-              </p>
-            </li>
-            <li class="feature">
-              <span class="feature__icon" aria-hidden="true">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="m13 2-3 7h7l-9 13 3-9H4z" />
-                </svg>
-              </span>
-              <h3 class="feature__title">Ship better</h3>
-              <p class="feature__body">
-                Patterns, reviews, and feedback from a room that actually writes
-                Swift every week.
-              </p>
-            </li>
-            <li class="feature">
-              <span class="feature__icon" aria-hidden="true">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                  <circle cx="9" cy="7" r="4" />
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                </svg>
-              </span>
-              <h3 class="feature__title">Belong here</h3>
-              <p class="feature__body">
-                From your first <code>print("Hello, world!")</code> to your tenth
-                WWDC — there's a seat at the table.
-              </p>
-            </li>
-          </ul>
-
-        </div>
-      </section>
-
-      <section class="section events reveal" id="events">
-        <div class="container">
-          <p class="eyebrow gradient-text gradient-text--warm">Meetups</p>
-          <h2 class="section__title">Come to the next one.</h2>
-          <p class="section__lead">
-            Dates, talks, and venues are announced on Luma a couple of weeks
-            ahead. Hit RSVP there once a meetup goes live, or join Discord for
-            the heads-up the moment we open registration.
-          </p>
-
-          <div class="event-actions">
-            <a
-              class="btn btn--primary"
-              href="https://lu.ma/swiftpune"
-              target="_blank"
-              rel="noopener"
-            >
-              See upcoming on Luma
-            </a>
-            <a
-              class="btn btn--ghost"
-              href="https://discord.gg/swiftpune"
-              target="_blank"
-              rel="noopener"
-            >
-              Get notified on Discord
-            </a>
+            </h1>
+            <p class="hero__sub">
+              We're a Pune-grown room for iOS, macOS, visionOS, and server-side
+              Swift developers — meeting to share craft, ship better, and
+              welcome the next generation in.
+            </p>
+            <div class="hero__cta">
+              <a class="btn btn--primary" href="https://lu.ma/swiftpune" target="_blank" rel="noopener">
+                <span>RSVP for the next meetup</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </a>
+              <a class="btn btn--ghost" href="https://discord.gg/swiftpune" target="_blank" rel="noopener">
+                <span>Open the Discord</span>
+              </a>
+            </div>
+            <ul class="hero__meta" aria-label="At a glance">
+              <li><strong>Monthly</strong> meetups</li>
+              <li><strong>10–30 min</strong> talks</li>
+              <li><strong>Free</strong> to attend</li>
+              <li><strong>No</strong> experience bar</li>
+            </ul>
           </div>
         </div>
       </section>
 
-      <section class="section speakers reveal" id="speakers">
-        <div class="container">
-          <p class="eyebrow gradient-text gradient-text--cool">People</p>
-          <h2 class="section__title">The folks behind it.</h2>
-          <p class="section__lead">
-            Organizers volunteer their evenings; speakers volunteer their
-            hard-won lessons. We'll introduce the team here soon — until then,
-            the easiest way to meet everyone is to come to a meetup.
+      <!-- ===========================================================
+           About — what kind of community this actually is
+           =========================================================== -->
+      <section class="section section--about reveal" id="about">
+        <div class="container container--narrow">
+          <p class="comment-eyebrow">// crew</p>
+          <h2 class="display">
+            Built by the people <span class="ink">building</span> on Apple's
+            platforms.
+          </h2>
+          <p class="lead">
+            SwiftPune is for anyone curious about — or already deep into —
+            Swift, SwiftUI, SwiftData, visionOS, server-side Swift, and the
+            rest of Apple's developer stack. Mostly working devs. A growing
+            number of students. All here because shipping software is more
+            fun in a room of people who get it.
+          </p>
+          <p class="lead lead--mute">
+            We're independent, volunteer-run, and free. We're serious about
+            the craft and gentle with each other. The room is small enough
+            for hallway conversations to actually happen, and the bar is
+            "did you learn something" — not "did you impress anyone."
           </p>
         </div>
       </section>
 
-      <section class="section sponsors reveal" id="sponsors">
+      <!-- ===========================================================
+           Stack — topic chips (the language of the audience)
+           =========================================================== -->
+      <section class="section section--stack reveal" id="stack">
         <div class="container">
-          <p class="eyebrow gradient-text gradient-text--warm">Partners</p>
-          <h2 class="section__title">Want to back the community?</h2>
-          <p class="section__lead">
-            Venues, pizza, swag, and the occasional surprise are what make our
-            evenings work. If your company would like to host a meetup, sponsor
-            a night, or partner long-term — we'd love to hear from you.
-          </p>
+          <header class="section-head">
+            <p class="comment-eyebrow">// stack.swift</p>
+            <h2 class="display">
+              The stack we keep <span class="ink">showing up</span> for.
+            </h2>
+            <p class="lead">
+              Past talks and hallway debates have circled around these. Nothing
+              here is required reading — show up to talk about any of it.
+            </p>
+          </header>
 
-          <p class="sponsor-cta">
-            <a
-              class="link-arrow"
-              href="mailto:hello@swiftpune.dev?subject=Sponsorship"
-              >Get in touch about sponsorship →</a
-            >
-          </p>
+          <ul class="chips" aria-label="Topics SwiftPune talks about">
+            <li class="chip"><span class="chip__dot chip__dot--coral"></span>Swift</li>
+            <li class="chip"><span class="chip__dot chip__dot--coral"></span>Swift Concurrency</li>
+            <li class="chip"><span class="chip__dot chip__dot--coral"></span>async / await</li>
+            <li class="chip"><span class="chip__dot chip__dot--teal"></span>SwiftUI</li>
+            <li class="chip"><span class="chip__dot chip__dot--teal"></span>UIKit Interop</li>
+            <li class="chip"><span class="chip__dot chip__dot--teal"></span>WidgetKit</li>
+            <li class="chip"><span class="chip__dot chip__dot--teal"></span>Live Activities</li>
+            <li class="chip"><span class="chip__dot chip__dot--green"></span>SwiftData</li>
+            <li class="chip"><span class="chip__dot chip__dot--green"></span>Core Data</li>
+            <li class="chip"><span class="chip__dot chip__dot--green"></span>Core ML</li>
+            <li class="chip"><span class="chip__dot chip__dot--violet"></span>visionOS</li>
+            <li class="chip"><span class="chip__dot chip__dot--violet"></span>watchOS</li>
+            <li class="chip"><span class="chip__dot chip__dot--violet"></span>macOS</li>
+            <li class="chip"><span class="chip__dot chip__dot--violet"></span>App Intents</li>
+            <li class="chip"><span class="chip__dot chip__dot--orange"></span>Vapor</li>
+            <li class="chip"><span class="chip__dot chip__dot--orange"></span>Hummingbird</li>
+            <li class="chip"><span class="chip__dot chip__dot--orange"></span>Server-side Swift</li>
+            <li class="chip"><span class="chip__dot chip__dot--blue"></span>Xcode &amp; tooling</li>
+            <li class="chip"><span class="chip__dot chip__dot--blue"></span>TestFlight</li>
+            <li class="chip"><span class="chip__dot chip__dot--blue"></span>App Store Connect</li>
+            <li class="chip"><span class="chip__dot chip__dot--blue"></span>App architecture</li>
+            <li class="chip"><span class="chip__dot chip__dot--blue"></span>Performance &amp; profiling</li>
+            <li class="chip"><span class="chip__dot chip__dot--blue"></span>CI / CD for iOS</li>
+            <li class="chip chip--more">+ whatever you bring</li>
+          </ul>
         </div>
       </section>
 
-      <section class="section join reveal" id="join">
+      <!-- ===========================================================
+           Pillars — why this room exists
+           =========================================================== -->
+      <section class="section section--pillars reveal" id="why">
         <div class="container">
-          <p class="eyebrow gradient-text gradient-text--cool">Get involved</p>
-          <h2 class="section__title">There's a way in for everyone.</h2>
+          <header class="section-head">
+            <p class="comment-eyebrow">// three reasons</p>
+            <h2 class="display">
+              Why this room <span class="ink">exists</span>.
+            </h2>
+          </header>
 
-          <ul class="ways">
-            <li class="way way--cool">
-              <h3>Attend</h3>
-              <p>
-                Come to the next meetup. Bring questions, leave with friends.
-                No experience bar — just curiosity.
+          <ul class="pillars">
+            <li class="pillar">
+              <span class="pillar__num">01.</span>
+              <h3 class="pillar__title">Ship better.</h3>
+              <p class="pillar__body">
+                Reviews, patterns, and post-mortems from people who actually
+                shipped this quarter. Bring your bug — leave with three ways
+                to fix it and one to avoid having it again.
               </p>
-              <a
-                class="btn btn--ghost"
-                href="https://lu.ma/swiftpune"
-                target="_blank"
-                rel="noopener"
-                >RSVP →</a
-              >
+              <p class="pillar__for">for working devs</p>
             </li>
-            <li class="way way--warm">
-              <h3>Speak</h3>
-              <p>
-                Talks run 10–30 minutes. First-time speakers very welcome — an
-                organizer will help you prep.
+
+            <li class="pillar">
+              <span class="pillar__num">02.</span>
+              <h3 class="pillar__title">Learn in public.</h3>
+              <p class="pillar__body">
+                Talks, workshops, Q&amp;A — and the room that listens. We
+                coach first-time speakers through their first 10-minute talk
+                and the post-talk shakes.
               </p>
-              <a
-                class="btn btn--ghost"
-                href="mailto:hello@swiftpune.dev?subject=I'd%20like%20to%20speak"
-                >Pitch a talk →</a
-              >
+              <p class="pillar__for">for the curious &amp; the brave</p>
             </li>
-            <li class="way way--mix">
-              <h3>Sponsor</h3>
-              <p>
-                Host a meetup at your office, sponsor pizza for a night, or back
-                our annual community event.
+
+            <li class="pillar pillar--accent">
+              <span class="pillar__num">03.</span>
+              <h3 class="pillar__title">Welcome bench.</h3>
+              <p class="pillar__body">
+                Specifically for students and first-time-attendees. No
+                experience bar. No "actually" energy. The newest person in
+                the room is the most important person in the room.
               </p>
-              <a
-                class="btn btn--ghost"
-                href="mailto:hello@swiftpune.dev?subject=Sponsorship"
-                >Get in touch →</a
-              >
+              <p class="pillar__for">for the next generation</p>
             </li>
           </ul>
+        </div>
+      </section>
+
+      <!-- ===========================================================
+           Meetups — when, where, RSVP
+           =========================================================== -->
+      <section class="section section--meetups reveal" id="meetups">
+        <div class="container">
+          <div class="meetups">
+            <div class="meetups__copy">
+              <p class="comment-eyebrow">// meetup()</p>
+              <h2 class="display">
+                Find us on a <span class="ink">Saturday</span>.
+              </h2>
+              <p class="lead">
+                Cadence and venues land on Luma a couple of weeks ahead. RSVP
+                there once a meetup goes live, or join Discord for the
+                heads-up the moment registration opens. A typical evening
+                runs ~2.5 hours: a few talks, a long hallway track, and
+                whatever pizza decides to do.
+              </p>
+              <div class="meetups__cta">
+                <a class="btn btn--primary" href="https://lu.ma/swiftpune" target="_blank" rel="noopener">
+                  <span>See upcoming on Luma</span>
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                </a>
+                <a class="btn btn--ghost" href="https://discord.gg/swiftpune" target="_blank" rel="noopener">
+                  <span>Get pinged on Discord</span>
+                </a>
+              </div>
+            </div>
+
+            <aside class="meetups__card" aria-label="What a meetup looks like">
+              <p class="meetups__card-eyebrow">// typical run-sheet</p>
+              <ol class="run-sheet">
+                <li>
+                  <span class="run-sheet__time">18:30</span>
+                  <span class="run-sheet__body">Doors. Name tags. A hello round.</span>
+                </li>
+                <li>
+                  <span class="run-sheet__time">19:00</span>
+                  <span class="run-sheet__body">Talk 1 — 20 min + 5 of Q&amp;A.</span>
+                </li>
+                <li>
+                  <span class="run-sheet__time">19:30</span>
+                  <span class="run-sheet__body">Talk 2 — usually a lightning.</span>
+                </li>
+                <li>
+                  <span class="run-sheet__time">19:55</span>
+                  <span class="run-sheet__body">Break. Pizza. Chai. Hallway track.</span>
+                </li>
+                <li>
+                  <span class="run-sheet__time">20:30</span>
+                  <span class="run-sheet__body">Talk 3 — the deep one.</span>
+                </li>
+                <li>
+                  <span class="run-sheet__time">21:00</span>
+                  <span class="run-sheet__body">Close. Photo. Walk to dinner if you want.</span>
+                </li>
+              </ol>
+              <p class="meetups__fineprint">
+                Run-sheet rounds to the nearest meetup. Real one ships with
+                each Luma announcement.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===========================================================
+           First time? — onboarding for newer/younger devs
+           =========================================================== -->
+      <section class="section section--first reveal" id="first-time">
+        <span class="bubble bubble--accent bubble--first" aria-hidden="true"></span>
+        <div class="container container--narrow">
+          <header class="section-head">
+            <p class="comment-eyebrow">// first.commit</p>
+            <h2 class="display">
+              Coming for the <span class="ink">first time</span>?
+            </h2>
+            <p class="lead">
+              Two minutes of reading. You'll know what you're walking into,
+              and we'll know to keep an eye out for you.
+            </p>
+          </header>
+
+          <ul class="checks">
+            <li>
+              <span class="checks__mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17.5 19 7"/></svg>
+              </span>
+              <div>
+                <strong>Bring a laptop, your questions, an opinion.</strong>
+                The opinion is the important one. Even a wrong one starts a
+                better conversation than no opinion.
+              </div>
+            </li>
+            <li>
+              <span class="checks__mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17.5 19 7"/></svg>
+              </span>
+              <div>
+                <strong>Wear what you'd wear to work or to a college fest.</strong>
+                Both fit. We're not a uniform crowd.
+              </div>
+            </li>
+            <li>
+              <span class="checks__mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17.5 19 7"/></svg>
+              </span>
+              <div>
+                <strong>We start with a hello round.</strong>
+                Name, what you build (or want to build), one thing you're
+                stuck on this week. Nobody's a stranger by talk #1.
+              </div>
+            </li>
+            <li>
+              <span class="checks__mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17.5 19 7"/></svg>
+              </span>
+              <div>
+                <strong>Leave when you want.</strong>
+                No pressure to stay till close. Slip out after talk 2 if you
+                need to — we'll see you next time.
+              </div>
+            </li>
+            <li>
+              <span class="checks__mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17.5 19 7"/></svg>
+              </span>
+              <div>
+                <strong>Pizza &amp; chai are on the house.</strong>
+                Veg and non-veg. Tell us about allergies on the RSVP.
+              </div>
+            </li>
+          </ul>
+
+          <p class="first__cta">
+            Want to introduce yourself first?
+            <a class="link" href="https://discord.gg/swiftpune" target="_blank" rel="noopener">
+              Drop a hi in <code>#intros</code> on Discord
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <!-- ===========================================================
+           Organizers — honest "we'll introduce them" empty state
+           =========================================================== -->
+      <section class="section section--organizers reveal" id="organizers">
+        <div class="container">
+          <header class="section-head section-head--center">
+            <p class="comment-eyebrow">// organizers</p>
+            <h2 class="display">
+              The people in the <span class="ink">room</span>.
+            </h2>
+            <p class="lead">
+              Organizers volunteer their evenings; speakers volunteer their
+              hard-won lessons. We'll introduce the team properly once the
+              lineup stabilizes — until then, the easiest way to meet
+              everyone is to come to a meetup.
+            </p>
+          </header>
+
+          <div class="organizers-grid">
+            <div class="org-card org-card--placeholder">
+              <div class="org-card__avatar">
+                <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                  <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="1.4" stroke-dasharray="3 4"/>
+                  <text x="32" y="37" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="currentColor" opacity="0.6">nil</text>
+                </svg>
+              </div>
+              <p class="org-card__role">Organizer</p>
+              <p class="org-card__name">Name TBD</p>
+            </div>
+            <div class="org-card org-card--placeholder">
+              <div class="org-card__avatar">
+                <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                  <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="1.4" stroke-dasharray="3 4"/>
+                  <text x="32" y="37" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="currentColor" opacity="0.6">nil</text>
+                </svg>
+              </div>
+              <p class="org-card__role">Organizer</p>
+              <p class="org-card__name">Name TBD</p>
+            </div>
+            <div class="org-card org-card--placeholder">
+              <div class="org-card__avatar">
+                <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                  <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="1.4" stroke-dasharray="3 4"/>
+                  <text x="32" y="37" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="currentColor" opacity="0.6">nil</text>
+                </svg>
+              </div>
+              <p class="org-card__role">Speaker liaison</p>
+              <p class="org-card__name">Name TBD</p>
+            </div>
+            <div class="org-card org-card--placeholder">
+              <div class="org-card__avatar">
+                <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                  <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="1.4" stroke-dasharray="3 4"/>
+                  <text x="32" y="37" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="currentColor" opacity="0.6">nil</text>
+                </svg>
+              </div>
+              <p class="org-card__role">Newcomers buddy</p>
+              <p class="org-card__name">Name TBD</p>
+            </div>
+          </div>
+
+          <p class="organizers__cta">
+            Speaking is the fastest path to knowing everyone.
+            <a class="link" href="mailto:hello@swiftpune.dev?subject=I'd%20like%20to%20speak">
+              Pitch a talk
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <!-- ===========================================================
+           Sponsors — how it works
+           =========================================================== -->
+      <section class="section section--sponsors reveal" id="sponsors">
+        <div class="container">
+          <header class="section-head section-head--center">
+            <p class="comment-eyebrow">// sponsors</p>
+            <h2 class="display">
+              Funded by people who <span class="ink">care</span>.
+            </h2>
+            <p class="lead">
+              Venues, pizza, swag, and the occasional surprise are what make
+              our evenings work. We don't list logos here on principle —
+              every sponsor gets a stage minute at the meetup they fund and
+              a thank-you in the Luma listing.
+            </p>
+          </header>
+
+          <div class="sponsor-tiers">
+            <div class="tier">
+              <p class="tier__label">Host a meetup</p>
+              <h3 class="tier__title">Your office. One Saturday.</h3>
+              <p class="tier__body">
+                We bring the talks. You bring a room, chairs, and a
+                projector. Pizza budget covered if needed.
+              </p>
+            </div>
+            <div class="tier tier--accent">
+              <p class="tier__label">Sponsor an evening</p>
+              <h3 class="tier__title">Cover one meetup's costs.</h3>
+              <p class="tier__body">
+                Pizza, chai, name tags, the small AV bits. Your team gets a
+                stage minute and a thank-you in the room.
+              </p>
+            </div>
+            <div class="tier">
+              <p class="tier__label">Long-term partner</p>
+              <h3 class="tier__title">Back the year.</h3>
+              <p class="tier__body">
+                For companies that hire Apple-platform devs and want to be
+                on a first-name basis with Pune's. Write to us.
+              </p>
+            </div>
+          </div>
+
+          <p class="sponsors__cta">
+            <a class="btn btn--primary" href="mailto:hello@swiftpune.dev?subject=Sponsorship">
+              <span>Talk to us about sponsorship</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <!-- ===========================================================
+           Values — code of conduct anchor
+           =========================================================== -->
+      <section class="section section--values reveal" id="values">
+        <span class="bubble bubble--teal bubble--values" aria-hidden="true"></span>
+        <div class="container container--narrow">
+          <header class="section-head">
+            <p class="comment-eyebrow">// values</p>
+            <h2 class="display">
+              A serious community, <span class="ink">gently held</span>.
+            </h2>
+          </header>
+
+          <ul class="values">
+            <li class="value">
+              <p class="value__line"><strong>Be kind.</strong> Default to assuming good faith. People are showing up after work; meet them where they are.</p>
+            </li>
+            <li class="value">
+              <p class="value__line"><strong>Be useful.</strong> Show the diff, the gist, the workaround. "It depends" is a starting point, not an answer.</p>
+            </li>
+            <li class="value">
+              <p class="value__line"><strong>Be welcoming.</strong> The newest person in the room is the most important person in the room. Find them, name-round them, sit next to them at talk one.</p>
+            </li>
+            <li class="value">
+              <p class="value__line"><strong>Be honest.</strong> Empty states stay empty until they're earned. No fake stats, no inflated sponsor lists, no copy-pasted speaker bios.</p>
+            </li>
+          </ul>
+
+          <p class="values__cta">
+            We follow the
+            <a class="link" href="https://www.contributor-covenant.org/version/2/1/code_of_conduct/" target="_blank" rel="noopener">
+              Contributor Covenant 2.1
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>.
+            Concerns or reports go to
+            <a class="link" href="mailto:conduct@swiftpune.dev"><code>conduct@swiftpune.dev</code></a> — handled by a rotating pair of organizers, with confidentiality.
+          </p>
         </div>
       </section>
     </main>
 
+    <!-- =============================================================
+         Footer
+         ============================================================= -->
     <footer class="site-footer">
       <div class="container site-footer__inner">
-        <div class="site-footer__brand">
-          <img src="assets/SPLogo.png" alt="" width="56" height="56" />
-          <div>
-            <p class="site-footer__wordmark">SwiftPune</p>
-            <p class="site-footer__tag">
-              Made with <span aria-label="love">♥</span> in Pune.
-            </p>
+        <div class="site-footer__cluster">
+          <div class="site-footer__brand">
+            <img src="assets/SPLogo.png" alt="" width="56" height="56" />
+            <div>
+              <p class="site-footer__word">SwiftPune</p>
+              <p class="site-footer__tag">
+                <code>// runs on volunteers and chai</code>
+              </p>
+            </div>
           </div>
+
+          <nav class="site-footer__cols" aria-label="Footer">
+            <div class="footer-col">
+              <p class="footer-col__title">Show up</p>
+              <a href="https://lu.ma/swiftpune" target="_blank" rel="noopener">Luma</a>
+              <a href="https://discord.gg/swiftpune" target="_blank" rel="noopener">Discord</a>
+              <a href="#meetups">Meetups</a>
+              <a href="#first-time">First time?</a>
+            </div>
+            <div class="footer-col">
+              <p class="footer-col__title">Contribute</p>
+              <a href="mailto:hello@swiftpune.dev?subject=I'd%20like%20to%20speak">Pitch a talk</a>
+              <a href="mailto:hello@swiftpune.dev?subject=Sponsorship">Sponsor</a>
+              <a href="mailto:hello@swiftpune.dev?subject=Host%20a%20meetup">Host a meetup</a>
+            </div>
+            <div class="footer-col">
+              <p class="footer-col__title">Off-site</p>
+              <a href="https://twitter.com/swiftpune" target="_blank" rel="noopener">X / Twitter</a>
+              <a href="https://github.com/swiftpune" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://linkedin.com/company/swiftpune" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="mailto:hello@swiftpune.dev">Email</a>
+            </div>
+            <div class="footer-col">
+              <p class="footer-col__title">Care</p>
+              <a href="#values">Values</a>
+              <a href="https://www.contributor-covenant.org/version/2/1/code_of_conduct/" target="_blank" rel="noopener">Code of conduct</a>
+              <a href="mailto:conduct@swiftpune.dev">Report a concern</a>
+            </div>
+          </nav>
         </div>
 
-        <nav class="site-footer__social" aria-label="Social">
-          <a
-            href="https://twitter.com/swiftpune"
-            target="_blank"
-            rel="noopener"
-            aria-label="X / Twitter"
-            ><svg
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              aria-hidden="true"
-              width="20"
-              height="20"
-            >
-              <path
-                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117Z"
-              />
-            </svg>
-          </a>
-          <a
-            href="https://github.com/swiftpune"
-            target="_blank"
-            rel="noopener"
-            aria-label="GitHub"
-            ><svg
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              aria-hidden="true"
-              width="20"
-              height="20"
-            >
-              <path
-                d="M12 .5C5.73.5.66 5.58.66 11.86c0 5.02 3.24 9.27 7.75 10.78.57.1.78-.25.78-.55v-1.94c-3.15.68-3.82-1.52-3.82-1.52-.51-1.31-1.25-1.66-1.25-1.66-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.17 1.72 1.17 1 1.72 2.63 1.22 3.27.93.1-.73.39-1.23.71-1.51-2.51-.29-5.15-1.26-5.15-5.6 0-1.24.44-2.25 1.17-3.04-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.14 1.16a10.9 10.9 0 0 1 2.86-.39c.97 0 1.95.13 2.86.39 2.18-1.47 3.14-1.16 3.14-1.16.63 1.57.23 2.73.12 3.02.73.79 1.17 1.8 1.17 3.04 0 4.35-2.65 5.31-5.17 5.59.4.34.76 1.02.76 2.06v3.05c0 .3.21.66.79.55 4.5-1.51 7.74-5.76 7.74-10.78C23.34 5.58 18.27.5 12 .5Z"
-              />
-            </svg>
-          </a>
-          <a
-            href="https://linkedin.com/company/swiftpune"
-            target="_blank"
-            rel="noopener"
-            aria-label="LinkedIn"
-            ><svg
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              aria-hidden="true"
-              width="20"
-              height="20"
-            >
-              <path
-                d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13Zm1.78 13.02H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"
-              />
-            </svg>
-          </a>
-          <a
-            href="https://discord.gg/swiftpune"
-            target="_blank"
-            rel="noopener"
-            aria-label="Discord"
-            ><svg
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              aria-hidden="true"
-              width="20"
-              height="20"
-            >
-              <path
-                d="M20.32 4.37A19.8 19.8 0 0 0 15.39 3a13.94 13.94 0 0 0-.64 1.32 18.27 18.27 0 0 0-5.5 0A13.66 13.66 0 0 0 8.61 3 19.74 19.74 0 0 0 3.68 4.37 20.45 20.45 0 0 0 .19 17.91a19.9 19.9 0 0 0 6.04 3.07c.49-.66.92-1.36 1.29-2.1a12.85 12.85 0 0 1-2.03-.97c.17-.12.34-.25.5-.38a14.18 14.18 0 0 0 12.02 0c.16.13.33.26.5.38a12.9 12.9 0 0 1-2.03.97c.37.74.8 1.44 1.29 2.1a19.84 19.84 0 0 0 6.05-3.07 20.42 20.42 0 0 0-3.5-13.54ZM8.02 15.36c-1.18 0-2.16-1.08-2.16-2.41 0-1.33.95-2.42 2.16-2.42 1.22 0 2.18 1.1 2.16 2.42 0 1.33-.95 2.41-2.16 2.41Zm7.97 0c-1.18 0-2.15-1.08-2.15-2.41 0-1.33.95-2.42 2.15-2.42 1.22 0 2.19 1.1 2.16 2.42 0 1.33-.95 2.41-2.16 2.41Z"
-              />
-            </svg>
-          </a>
-          <a
-            href="mailto:hello@swiftpune.dev"
-            aria-label="Email"
-            ><svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              width="20"
-              height="20"
-              aria-hidden="true"
-            >
-              <rect x="3" y="5" width="18" height="14" rx="2" />
-              <path d="m3 7 9 6 9-6" />
-            </svg>
-          </a>
-        </nav>
-
         <p class="site-footer__legal">
-          © <span id="year">2026</span> SwiftPune · <a href="#">Code of conduct</a>
+          <code>
+            // © <span id="year">2026</span> SwiftPune · made in Pune · IST (UTC&nbsp;+5:30)
+          </code>
         </p>
       </div>
     </footer>

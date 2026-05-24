@@ -1,53 +1,52 @@
+/* ===========================================================================
+   SwiftPune tokens — Studio Pune.
+   A confident, lightly playful design-studio palette for an Apple-platform
+   developer community. Light warm-off-white surfaces, one bold coral
+   accent pulled from the logo's "Pune" half, and bubble-letter language
+   borrowed from the mark without copying its gradients.
+   ========================================================================= */
+
 :root {
-  /* Surfaces */
-  --surface-0: #08080B;
-  --surface-1: #101015;
-  --surface-2: #16161D;
-  --surface-3: #1E1E26;
+  /* ----- Surfaces (light, warm) ---------------------------------------- */
+  --surface-0:  #FAF7F2;   /* page */
+  --surface-1:  #F4EFE6;   /* recessed band */
+  --surface-2:  #FFFFFF;   /* card */
+  --surface-3:  #EDE6D8;   /* edge */
+  --hairline:   rgba(28, 26, 36, 0.10);
+  --hairline-2: rgba(28, 26, 36, 0.06);
 
-  /* Text */
-  --text-strong: #F5F5F7;
-  --text: #E5E5EA;
-  --text-muted: #A1A1AA;
-  --text-dim: #6B6B73;
+  /* ----- Ink ----------------------------------------------------------- */
+  --ink:         #16151D;   /* the type itself */
+  --ink-soft:    #3A3742;
+  --ink-mute:    #6F6A78;
+  --ink-faint:   #ACA6B3;
 
-  /* Brand single-stops */
-  --c-violet:  #7C3AED;
-  --c-blue:    #3B82F6;
-  --c-teal:    #14B8A6;
-  --c-lime:    #A3E635;
-  --c-orange:  #F97316;
-  --c-red:     #EF4444;
-  --c-magenta: #EC4899;
-  --c-purple:  #A855F7;
+  /* ----- Brand accents (pulled from the logo, used solid not gradient) - */
+  --accent:      #E94B6B;   /* coral-magenta — the dominant action color */
+  --accent-deep: #C7314E;
+  --accent-tint: #FBE0E6;   /* a chip / soft fill */
 
-  /* Brand gradients */
-  --gradient-cool: linear-gradient(
-    135deg,
-    #7C3AED 0%,
-    #3B82F6 35%,
-    #14B8A6 70%,
-    #A3E635 100%
-  );
-  --gradient-warm: linear-gradient(
-    135deg,
-    #F97316 0%,
-    #EF4444 40%,
-    #EC4899 75%,
-    #A855F7 100%
-  );
-  --gradient-mix: linear-gradient(
-    135deg,
-    #7C3AED 0%,
-    #3B82F6 25%,
-    #14B8A6 50%,
-    #F97316 75%,
-    #EC4899 100%
-  );
+  --bubble-blue:    #4A6CD8;
+  --bubble-teal:    #2BB3A6;
+  --bubble-green:   #8FC93F;
+  --bubble-orange:  #F08531;
+  --bubble-violet:  #7C5BD8;
 
-  --focus: #A3E635;
+  --bubble-blue-tint:   #DCE3F7;
+  --bubble-teal-tint:   #D2EDEA;
+  --bubble-green-tint:  #E5F1D2;
+  --bubble-orange-tint: #FBE2CC;
 
-  /* Typography — Apple system font stack, no web fonts */
+  /* ----- Roles --------------------------------------------------------- */
+  --text-strong: var(--ink);
+  --text:        var(--ink-soft);
+  --text-muted:  var(--ink-mute);
+  --text-dim:    var(--ink-faint);
+
+  --focus:       var(--accent);
+
+  /* ----- Typography (Apple system stack — the native font for the
+     audience that lives in Xcode) -------------------------------------- */
   --font-display:
     -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
     "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -58,46 +57,65 @@
     ui-monospace, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
 
-  /* Fluid type scale */
-  --fs-hero:     clamp(2.75rem, 7.5vw + 0.5rem, 6.5rem);
-  --fs-h2:       clamp(2rem, 3.5vw + 0.5rem, 3.75rem);
-  --fs-h3:       clamp(1.375rem, 1.2vw + 1rem, 1.875rem);
-  --fs-lead:     clamp(1.0625rem, 0.5vw + 0.95rem, 1.375rem);
-  --fs-body:     clamp(1rem, 0.2vw + 0.9rem, 1.125rem);
-  --fs-small:    0.9375rem;
-  --fs-eyebrow:  0.78rem;
+  /* ----- Fluid scale --------------------------------------------------- */
+  --fs-hero:    clamp(3rem, 8.5vw + 0.4rem, 7.5rem);
+  --fs-h2:      clamp(2.1rem, 3.8vw + 0.6rem, 4rem);
+  --fs-h3:      clamp(1.4rem, 1.4vw + 0.95rem, 2rem);
+  --fs-lead:    clamp(1.1rem, 0.5vw + 1rem, 1.35rem);
+  --fs-body:    clamp(1rem, 0.2vw + 0.95rem, 1.1rem);
+  --fs-small:   0.9375rem;
+  --fs-mono:    0.85rem;        /* code-comment style eyebrows */
+  --fs-chip:    0.9rem;         /* topic chips */
 
-  /* Spacing scale */
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.5rem;
-  --space-6: 2rem;
-  --space-7: 3rem;
-  --space-8: 4rem;
-  --space-9: 6rem;
-  --space-10: 8rem;
+  /* ----- Spacing ------------------------------------------------------- */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4rem;
+  --s-9: 6rem;
+  --s-10: 8rem;
+  --s-11: 10rem;
 
-  /* Radii */
-  --r-sm: 8px;
-  --r-md: 14px;
-  --r-lg: 22px;
-  --r-xl: 30px;
-  --r-pill: 9999px;
+  /* ----- Radii — generous, friendly, bubble-adjacent ------------------- */
+  --r-xs: 6px;
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-xl: 36px;
+  --r-pill: 999px;
+  --r-blob: 38% 62% 53% 47% / 47% 38% 62% 53%;
+  --r-blob-2: 54% 46% 40% 60% / 41% 64% 36% 59%;
 
-  /* Motion */
+  /* ----- Shadows ------------------------------------------------------- */
+  --shadow-1:
+    0 1px 0 rgba(28, 26, 36, 0.04),
+    0 2px 8px -2px rgba(28, 26, 36, 0.06);
+  --shadow-2:
+    0 1px 0 rgba(28, 26, 36, 0.04),
+    0 8px 26px -10px rgba(28, 26, 36, 0.14);
+  --shadow-3:
+    0 1px 0 rgba(28, 26, 36, 0.04),
+    0 18px 48px -16px rgba(28, 26, 36, 0.20);
+  --shadow-accent:
+    0 8px 24px -8px rgba(233, 75, 107, 0.45);
+
+  /* ----- Motion -------------------------------------------------------- */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-press: cubic-bezier(0.6, 0, 0.4, 1);
   --dur-fast: 180ms;
-  --dur-mid: 420ms;
-  --dur-slow: 720ms;
+  --dur-mid: 380ms;
+  --dur-slow: 700ms;
 
-  /* Layout */
-  --container: 1200px;
-  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+  /* ----- Layout -------------------------------------------------------- */
+  --container: 1180px;
+  --container-wide: 1320px;
+  --gutter: clamp(1.25rem, 4vw, 2.75rem);
 
-  /* Nav */
-  --nav-h: 72px;
-  --nav-h-compact: 58px;
+  --nav-h: 76px;
+  --nav-h-compact: 60px;
 }

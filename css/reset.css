@@ -59,8 +59,15 @@ p, h1, h2, h3, h4, h5, h6 {
 
 :focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px var(--surface-0, #08080B), 0 0 0 4px var(--focus, #A3E635);
+  box-shadow:
+    0 0 0 2px var(--surface-0, #FAF7F2),
+    0 0 0 4px var(--focus, #E94B6B);
   border-radius: 6px;
+}
+
+::selection {
+  background: var(--accent-tint, #FBE0E6);
+  color: var(--ink, #16151D);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -7,9 +7,13 @@
   const menu = document.getElementById("mobileMenu");
   const yearEl = document.getElementById("year");
 
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  // -- Scroll state on nav -------------------------------------------------
+  /* -- Nav scroll state ------------------------------------------------- */
   let lastScrolled = null;
   const updateScrollState = () => {
     const scrolled = window.scrollY > 40;
@@ -20,7 +24,7 @@
   updateScrollState();
   window.addEventListener("scroll", updateScrollState, { passive: true });
 
-  // -- Mobile menu ---------------------------------------------------------
+  /* -- Mobile menu ------------------------------------------------------ */
   if (toggle && menu) {
     const closeMenu = () => {
       toggle.setAttribute("aria-expanded", "false");
@@ -51,18 +55,14 @@
       }
     });
 
-    const mq = window.matchMedia("(min-width: 768px)");
+    const mq = window.matchMedia("(min-width: 821px)");
     mq.addEventListener("change", (e) => {
       if (e.matches) closeMenu();
     });
   }
 
-  // -- Scroll reveal -------------------------------------------------------
-  const reduceMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  ).matches;
+  /* -- Scroll-reveal sections ----------------------------------------- */
   const reveals = document.querySelectorAll(".reveal");
-
   if (reduceMotion || !("IntersectionObserver" in window)) {
     reveals.forEach((el) => el.classList.add("is-visible"));
   } else {
@@ -75,14 +75,46 @@
           }
         });
       },
-      { rootMargin: "0px 0px -10% 0px", threshold: 0.08 }
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.05 }
     );
-    reveals.forEach((el) => io.observe(el));
+    const vh = window.innerHeight || 800;
+    reveals.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < vh) {
+        el.classList.add("is-visible");
+      } else {
+        io.observe(el);
+      }
+    });
   }
 
-  // -- Smooth-scroll offset for sticky nav --------------------------------
-  // Anchor links inside the page use CSS smooth-scroll; this just ensures
-  // the landing position clears the nav.
+  /* -- Subtle hero bubble parallax (skipped if reduced-motion) -------- */
+  if (!reduceMotion) {
+    const blobs = document.querySelectorAll(".hero__blob");
+    if (blobs.length) {
+      let ticking = false;
+      const apply = () => {
+        const y = window.scrollY;
+        blobs.forEach((b, i) => {
+          const factor = i === 0 ? 0.12 : -0.08;
+          b.style.translate = `0 ${y * factor}px`;
+        });
+        ticking = false;
+      };
+      window.addEventListener(
+        "scroll",
+        () => {
+          if (!ticking) {
+            window.requestAnimationFrame(apply);
+            ticking = true;
+          }
+        },
+        { passive: true }
+      );
+    }
+  }
+
+  /* -- Smooth-scroll offset for sticky nav ---------------------------- */
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (e) => {
       const id = link.getAttribute("href");
