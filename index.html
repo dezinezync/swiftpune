@@ -143,8 +143,8 @@
               </a>
             </div>
             <ul class="hero__meta" aria-label="At a glance">
-              <li><strong>S002</strong> shipped Mar '26</li>
-              <li><strong>4 talks</strong> + 1 lab</li>
+              <li><strong>Quarterly</strong> meetups</li>
+              <li><strong>20 minute</strong> talks</li>
               <li><strong>Free</strong> to attend</li>
               <li><strong>No</strong> experience bar</li>
             </ul>
@@ -613,50 +613,139 @@
             </p>
           </header>
 
-          <div class="organizers-grid organizers-grid--seven">
-            <a class="org-card" href="https://www.linkedin.com/in/abhishek-shinde-b1855a127/" target="_blank" rel="noopener">
-              <div class="org-card__avatar org-card__avatar--coral" aria-hidden="true"><span>AS</span></div>
-              <p class="org-card__role">Organizer</p>
-              <p class="org-card__name">Abhishek Shinde</p>
-              <p class="org-card__about">Sr. Software Engineer @ Qualys</p>
+          <p class="team-intro" aria-hidden="true">
+            <span class="tc-kw">let</span> <span class="tc-id">team</span><span class="tc-pn">:</span> [<span class="tc-ty">Organizer</span>] <span class="tc-pn">=</span> [
+          </p>
+
+          <div class="team-cards" role="list" aria-label="Team members">
+            <a class="team-card" href="https://www.linkedin.com/in/abhishek-shinde-b1855a127/" target="_blank" rel="noopener" role="listitem">
+              <header class="team-card__head">
+                <span class="team-card__index">team[0]</span>
+                <span class="team-card__arrow" aria-hidden="true">↗</span>
+              </header>
+              <div class="team-card__body">
+                <div class="team-card__avatar team-card__avatar--coral" aria-hidden="true"><span>AS</span></div>
+                <div class="team-card__code">
+                  <span class="team-card__line"><span class="tc-kw">.init</span>(</span>
+                  <span class="team-card__line">  <span class="tc-pr">name</span><span class="tc-pn">:</span> <span class="tc-str">"Abhishek Shinde"</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">role</span><span class="tc-pn">:</span> <span class="tc-en">.organizer</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">about</span><span class="tc-pn">:</span> <span class="tc-str">"Sr. SWE @ Qualys"</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">linkedIn</span><span class="tc-pn">:</span> <span class="tc-ar">↗</span></span>
+                  <span class="team-card__line">)</span>
+                </div>
+              </div>
             </a>
-            <a class="org-card" href="https://www.linkedin.com/in/divya-maloo/" target="_blank" rel="noopener">
-              <div class="org-card__avatar org-card__avatar--teal" aria-hidden="true"><span>DM</span></div>
-              <p class="org-card__role">Organizer · Moderator</p>
-              <p class="org-card__name">Divya Maloo</p>
-              <p class="org-card__about">iOS Developer · Swift community organizer</p>
+
+            <a class="team-card" href="https://www.linkedin.com/in/divya-maloo/" target="_blank" rel="noopener" role="listitem">
+              <header class="team-card__head">
+                <span class="team-card__index">team[1]</span>
+                <span class="team-card__arrow" aria-hidden="true">↗</span>
+              </header>
+              <div class="team-card__body">
+                <div class="team-card__avatar team-card__avatar--teal" aria-hidden="true"><span>DM</span></div>
+                <div class="team-card__code">
+                  <span class="team-card__line"><span class="tc-kw">.init</span>(</span>
+                  <span class="team-card__line">  <span class="tc-pr">name</span><span class="tc-pn">:</span> <span class="tc-str">"Divya Maloo"</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">role</span><span class="tc-pn">:</span> <span class="tc-en">.moderator</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">about</span><span class="tc-pn">:</span> <span class="tc-str">"iOS Eng @ PhonePe"</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">linkedIn</span><span class="tc-pn">:</span> <span class="tc-ar">↗</span></span>
+                  <span class="team-card__line">)</span>
+                </div>
+              </div>
             </a>
-            <a class="org-card" href="https://www.linkedin.com/in/nikhil-nigade-4a395b358/" target="_blank" rel="noopener">
-              <div class="org-card__avatar org-card__avatar--orange" aria-hidden="true"><span>NN</span></div>
-              <p class="org-card__role">Organizer · Labs</p>
-              <p class="org-card__name">Nikhil Nigade</p>
-              <p class="org-card__about">iOS &amp; macOS · Founder, Dezine Zync · Elytra, Pockity, Esfresco</p>
+
+            <a class="team-card" href="https://www.linkedin.com/in/nikhil-nigade-4a395b358/" target="_blank" rel="noopener" role="listitem">
+              <header class="team-card__head">
+                <span class="team-card__index">team[2]</span>
+                <span class="team-card__arrow" aria-hidden="true">↗</span>
+              </header>
+              <div class="team-card__body">
+                <div class="team-card__avatar team-card__avatar--orange" aria-hidden="true"><span>NN</span></div>
+                <div class="team-card__code">
+                  <span class="team-card__line"><span class="tc-kw">.init</span>(</span>
+                  <span class="team-card__line">  <span class="tc-pr">name</span><span class="tc-pn">:</span> <span class="tc-str">"Nikhil Nigade"</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">role</span><span class="tc-pn">:</span> <span class="tc-en">.labsLead</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">about</span><span class="tc-pn">:</span> <span class="tc-str">"Founder, Dezine Zync"</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">linkedIn</span><span class="tc-pn">:</span> <span class="tc-ar">↗</span></span>
+                  <span class="team-card__line">)</span>
+                </div>
+              </div>
             </a>
-            <a class="org-card" href="https://www.linkedin.com/in/recursiveswift/" target="_blank" rel="noopener">
-              <div class="org-card__avatar org-card__avatar--violet" aria-hidden="true"><span>RJ</span></div>
-              <p class="org-card__role">Organizer</p>
-              <p class="org-card__name">Rimesh Jotaniya</p>
-              <p class="org-card__about">iOS Developer · Swift, UIKit, SwiftUI</p>
+
+            <a class="team-card" href="https://www.linkedin.com/in/recursiveswift/" target="_blank" rel="noopener" role="listitem">
+              <header class="team-card__head">
+                <span class="team-card__index">team[3]</span>
+                <span class="team-card__arrow" aria-hidden="true">↗</span>
+              </header>
+              <div class="team-card__body">
+                <div class="team-card__avatar team-card__avatar--violet" aria-hidden="true"><span>RJ</span></div>
+                <div class="team-card__code">
+                  <span class="team-card__line"><span class="tc-kw">.init</span>(</span>
+                  <span class="team-card__line">  <span class="tc-pr">name</span><span class="tc-pn">:</span> <span class="tc-str">"Rimesh Jotaniya"</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">role</span><span class="tc-pn">:</span> <span class="tc-en">.organizer</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">about</span><span class="tc-pn">:</span> <span class="tc-str">"Swift · UIKit · SwiftUI"</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">linkedIn</span><span class="tc-pn">:</span> <span class="tc-ar">↗</span></span>
+                  <span class="team-card__line">)</span>
+                </div>
+              </div>
             </a>
-            <a class="org-card" href="https://www.linkedin.com/in/swetal-matkar-73a836204/" target="_blank" rel="noopener">
-              <div class="org-card__avatar org-card__avatar--green" aria-hidden="true"><span>SM</span></div>
-              <p class="org-card__role">Organizer</p>
-              <p class="org-card__name">Swetal Matkar</p>
-              <p class="org-card__about">iOS Developer @ Encoding Solutions · Swift, Obj-C</p>
+
+            <a class="team-card" href="https://www.linkedin.com/in/swetal-matkar-73a836204/" target="_blank" rel="noopener" role="listitem">
+              <header class="team-card__head">
+                <span class="team-card__index">team[4]</span>
+                <span class="team-card__arrow" aria-hidden="true">↗</span>
+              </header>
+              <div class="team-card__body">
+                <div class="team-card__avatar team-card__avatar--green" aria-hidden="true"><span>SM</span></div>
+                <div class="team-card__code">
+                  <span class="team-card__line"><span class="tc-kw">.init</span>(</span>
+                  <span class="team-card__line">  <span class="tc-pr">name</span><span class="tc-pn">:</span> <span class="tc-str">"Swetal Matkar"</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">role</span><span class="tc-pn">:</span> <span class="tc-en">.organizer</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">about</span><span class="tc-pn">:</span> <span class="tc-str">"iOS @ Encoding Solutions"</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">linkedIn</span><span class="tc-pn">:</span> <span class="tc-ar">↗</span></span>
+                  <span class="team-card__line">)</span>
+                </div>
+              </div>
             </a>
-            <a class="org-card" href="https://www.linkedin.com/in/msusare/" target="_blank" rel="noopener">
-              <div class="org-card__avatar org-card__avatar--blue" aria-hidden="true"><span>MS</span></div>
-              <p class="org-card__role">Organizer</p>
-              <p class="org-card__name">MaYur SuSare</p>
-              <p class="org-card__about">iOS Developer · MVVM &amp; Clean Architecture · Remote</p>
+
+            <a class="team-card" href="https://www.linkedin.com/in/msusare/" target="_blank" rel="noopener" role="listitem">
+              <header class="team-card__head">
+                <span class="team-card__index">team[5]</span>
+                <span class="team-card__arrow" aria-hidden="true">↗</span>
+              </header>
+              <div class="team-card__body">
+                <div class="team-card__avatar team-card__avatar--blue" aria-hidden="true"><span>MS</span></div>
+                <div class="team-card__code">
+                  <span class="team-card__line"><span class="tc-kw">.init</span>(</span>
+                  <span class="team-card__line">  <span class="tc-pr">name</span><span class="tc-pn">:</span> <span class="tc-str">"MaYur SuSare"</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">role</span><span class="tc-pn">:</span> <span class="tc-en">.organizer</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">about</span><span class="tc-pn">:</span> <span class="tc-str">"iOS · MVVM · remote"</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">linkedIn</span><span class="tc-pn">:</span> <span class="tc-ar">↗</span></span>
+                  <span class="team-card__line">)</span>
+                </div>
+              </div>
             </a>
-            <a class="org-card" href="https://www.linkedin.com/in/ganesh-patil-2b3431119/" target="_blank" rel="noopener">
-              <div class="org-card__avatar org-card__avatar--coral" aria-hidden="true"><span>GP</span></div>
-              <p class="org-card__role">Organizer</p>
-              <p class="org-card__name">Ganesh Patil</p>
-              <p class="org-card__about">Sr. iOS Developer · Building CoreLearnly</p>
+
+            <a class="team-card" href="https://www.linkedin.com/in/ganesh-patil-2b3431119/" target="_blank" rel="noopener" role="listitem">
+              <header class="team-card__head">
+                <span class="team-card__index">team[6]</span>
+                <span class="team-card__arrow" aria-hidden="true">↗</span>
+              </header>
+              <div class="team-card__body">
+                <div class="team-card__avatar team-card__avatar--coral" aria-hidden="true"><span>GP</span></div>
+                <div class="team-card__code">
+                  <span class="team-card__line"><span class="tc-kw">.init</span>(</span>
+                  <span class="team-card__line">  <span class="tc-pr">name</span><span class="tc-pn">:</span> <span class="tc-str">"Ganesh Patil"</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">role</span><span class="tc-pn">:</span> <span class="tc-en">.organizer</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">about</span><span class="tc-pn">:</span> <span class="tc-str">"Sr. iOS · CoreLearnly"</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">linkedIn</span><span class="tc-pn">:</span> <span class="tc-ar">↗</span></span>
+                  <span class="team-card__line">)</span>
+                </div>
+              </div>
             </a>
           </div>
+
+          <p class="team-outro" aria-hidden="true">]</p>
 
           <p class="organizers__cta">
             Speaking is the fastest path to knowing everyone.
