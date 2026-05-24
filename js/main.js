@@ -114,6 +114,21 @@
     }
   }
 
+  /* -- Shuffle core team on each page load ----------------------------
+     Philosophy: nobody has a fixed seat. Whoever's listed first on a
+     given visit is just luck of the shuffle. Fisher-Yates on an array
+     of nodes, then re-append in the new order (appendChild moves DOM
+     nodes rather than duplicating them). */
+  const crew = document.querySelector(".crew");
+  if (crew) {
+    const members = Array.from(crew.children);
+    for (let i = members.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [members[i], members[j]] = [members[j], members[i]];
+    }
+    members.forEach((m) => crew.appendChild(m));
+  }
+
   /* -- Smooth-scroll offset for sticky nav ---------------------------- */
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (e) => {

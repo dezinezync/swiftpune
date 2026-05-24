@@ -994,137 +994,76 @@ body.is-scrolled .site-nav__inner { height: var(--nav-h-compact); }
 
 /* ---------- 12. Core team -------------------------------------------- */
 
-/* team.swift cards — one per core team member.
-   Each card is its own Swift struct snippet with an avatar slot.
-   The wrapper `team-intro` / `team-outro` paragraphs frame the cards
-   as if they were elements inside `let team: [CoreMember] = [ ... ]`. */
+/* Crew — a simple photo+name grid. No titles, no roles. Each member is
+   one circular photo (initials fallback) plus the person's name; the
+   whole tile is a link to their LinkedIn. Photo slot is image-ready —
+   swap the <span>XX</span> for <img> when real photos are available. */
 
-.team-intro,
-.team-outro {
-  max-width: 1100px;
-  margin: var(--s-7) auto 0;
-  padding: 0 var(--s-3);
-  font-family: var(--font-mono);
-  font-size: 0.95rem;
-  color: var(--ink);
-}
-.team-outro { margin: var(--s-3) auto var(--s-5); }
-
-.team-cards {
+.crew {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  gap: var(--s-4);
-  max-width: 1100px;
-  margin: var(--s-3) auto 0;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: var(--s-6) var(--s-4);
+  max-width: 920px;
+  margin: var(--s-7) auto var(--s-5);
   padding: 0 var(--s-3);
 }
 
-.team-card {
-  display: block;
-  background: var(--surface-2);
-  border: 1px solid var(--hairline);
-  border-radius: var(--r-lg);
-  box-shadow: var(--shadow-1);
-  overflow: hidden;
+.crew__member {
+  display: grid;
+  justify-items: center;
+  gap: var(--s-3);
+  padding: var(--s-3);
   text-decoration: none;
   color: inherit;
+  border-radius: var(--r-md);
   transition:
-    transform var(--dur-mid) var(--ease-out),
-    box-shadow var(--dur-mid) var(--ease-out),
-    border-color var(--dur-fast) var(--ease-out);
+    transform var(--dur-mid) var(--ease-out);
 }
-.team-card:hover,
-.team-card:focus-visible {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-2);
-  border-color: var(--accent-tint);
+.crew__member:hover,
+.crew__member:focus-visible {
+  transform: translateY(-4px);
   outline: none;
 }
-.team-card:focus-visible {
-  box-shadow: var(--shadow-2), 0 0 0 3px var(--accent-tint);
+.crew__member:hover .crew__photo,
+.crew__member:focus-visible .crew__photo {
+  box-shadow: var(--shadow-3), 0 0 0 3px var(--accent-tint);
 }
-.team-card:hover .team-card__arrow,
-.team-card:focus-visible .team-card__arrow {
-  transform: translate(2px, -2px);
-}
-
-.team-card__head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--s-3) var(--s-5);
-  background: var(--surface-1);
-  border-bottom: 1px solid var(--hairline);
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-}
-.team-card__index {
-  color: var(--ink-soft);
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-.team-card__arrow {
-  color: var(--accent);
-  font-weight: 700;
-  font-size: 0.95rem;
-  transition: transform var(--dur-fast) var(--ease-out);
+.crew__member:hover .crew__name,
+.crew__member:focus-visible .crew__name {
+  color: var(--accent-deep);
 }
 
-.team-card__body {
-  display: flex;
-  align-items: center;
-  gap: var(--s-5);
-  padding: var(--s-5) var(--s-5);
-}
-
-.team-card__avatar {
-  flex: 0 0 auto;
-  width: 78px;
-  height: 78px;
+.crew__photo {
+  width: 120px;
+  height: 120px;
   display: grid;
   place-items: center;
   border-radius: 50%;
   overflow: hidden;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 1.5rem;
-  letter-spacing: -0.02em;
+  font-size: 2.3rem;
+  letter-spacing: -0.04em;
+  box-shadow: var(--shadow-1);
+  transition:
+    box-shadow var(--dur-mid) var(--ease-out);
 }
-.team-card__avatar img { width: 100%; height: 100%; object-fit: cover; }
-.team-card__avatar--coral  { background: var(--accent-tint);        color: var(--accent-deep); }
-.team-card__avatar--teal   { background: var(--bubble-teal-tint);   color: var(--bubble-teal); }
-.team-card__avatar--orange { background: var(--bubble-orange-tint); color: var(--bubble-orange); }
-.team-card__avatar--green  { background: var(--bubble-green-tint);  color: #5E8C1A; }
-.team-card__avatar--blue   { background: var(--bubble-blue-tint);   color: var(--bubble-blue); }
-.team-card__avatar--violet { background: #E6DEFA;                   color: var(--bubble-violet); }
+.crew__photo img { width: 100%; height: 100%; object-fit: cover; }
+.crew__photo--coral  { background: var(--accent-tint);        color: var(--accent-deep); }
+.crew__photo--teal   { background: var(--bubble-teal-tint);   color: var(--bubble-teal); }
+.crew__photo--orange { background: var(--bubble-orange-tint); color: var(--bubble-orange); }
+.crew__photo--green  { background: var(--bubble-green-tint);  color: #5E8C1A; }
+.crew__photo--blue   { background: var(--bubble-blue-tint);   color: var(--bubble-blue); }
+.crew__photo--violet { background: #E6DEFA;                   color: var(--bubble-violet); }
 
-.team-card__code {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  line-height: 1.55;
-  color: var(--ink);
-  min-width: 0;
-  flex: 1 1 auto;
-  overflow-x: auto;
-}
-.team-card__line {
-  display: block;
-  white-space: pre;
-}
-
-/* Syntax tokens — shared with any other inline Swift snippets. */
-.tc-kw  { color: var(--bubble-violet); font-weight: 600; }
-.tc-ty  { color: var(--bubble-blue);   font-weight: 600; }
-.tc-id  { color: var(--ink); }
-.tc-pr  { color: var(--ink-soft); }
-.tc-pn  { color: var(--ink-mute); }
-.tc-str { color: var(--accent-deep); }
-.tc-en  { color: var(--bubble-orange); font-weight: 600; }
-.tc-ar  {
-  display: inline-block;
-  color: var(--accent);
+.crew__name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
   font-weight: 700;
-  transition: transform var(--dur-fast) var(--ease-out);
+  color: var(--ink);
+  text-align: center;
+  line-height: 1.25;
+  transition: color var(--dur-fast) var(--ease-out);
 }
 
 .team__cta {
@@ -1437,10 +1376,8 @@ html.js .reveal.is-visible {
   .sponsors-note__body { padding: var(--s-5) var(--s-4); font-size: 0.86rem; }
   .sponsors-note__line { padding-left: 32px; }
 
-  .team-cards { grid-template-columns: 1fr; }
-  .team-card__body { padding: var(--s-4); gap: var(--s-4); }
-  .team-card__avatar { width: 64px; height: 64px; font-size: 1.25rem; }
-  .team-card__code { font-size: 0.78rem; }
+  .crew { grid-template-columns: repeat(2, 1fr); gap: var(--s-5) var(--s-3); }
+  .crew__photo { width: 96px; height: 96px; font-size: 1.85rem; }
 
   .recap__agenda { padding: var(--s-2) var(--s-4); }
   .recap__row { grid-template-columns: 58px 1fr; gap: var(--s-3); padding: var(--s-3) 0; }
@@ -1459,7 +1396,7 @@ html.js .reveal.is-visible {
     animation: none !important;
   }
   html.js .reveal { transform: none; }
-  .chip, .pillar, .value, .btn, .onboard__num, .team-card {
+  .chip, .pillar, .value, .btn, .onboard__num, .crew__member {
     transition: none !important;
   }
 }
