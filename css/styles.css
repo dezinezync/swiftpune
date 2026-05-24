@@ -1138,72 +1138,62 @@ body.is-scrolled .site-nav__inner { height: var(--nav-h-compact); }
 
 .section--sponsors { padding-top: var(--s-10); }
 
-.sponsor-tiers {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: var(--s-4);
-  margin: var(--s-7) 0 var(--s-7);
-}
-.tier {
-  padding: var(--s-6) var(--s-5);
+/* Sponsors note — a single warm Swift doc-comment from the crew that
+   replaces the old tier cards. Each line is a paragraph; the leading
+   `///` is added via ::before so wrapping behaves on mobile. */
+
+.sponsors-note {
+  max-width: 720px;
+  margin: var(--s-7) auto var(--s-7);
   background: var(--surface-2);
   border: 1px solid var(--hairline);
   border-radius: var(--r-lg);
-  box-shadow: var(--shadow-1);
-  transition:
-    transform var(--dur-mid) var(--ease-out),
-    box-shadow var(--dur-mid) var(--ease-out);
-}
-.tier:hover {
-  transform: translateY(-4px);
   box-shadow: var(--shadow-2);
+  overflow: hidden;
 }
-.tier--accent {
-  background: var(--ink);
-  color: var(--surface-0);
-  border-color: var(--ink);
-  position: relative;
-}
-.tier--accent::before {
-  content: "popular ask";
-  position: absolute;
-  top: -10px;
-  right: 16px;
-  background: var(--accent);
-  color: #FFF;
+.sponsors-note__head {
+  display: flex;
+  align-items: center;
+  padding: var(--s-3) var(--s-5);
+  background: var(--surface-1);
+  border-bottom: 1px solid var(--hairline);
   font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 0.2rem 0.65rem;
-  border-radius: var(--r-pill);
-  box-shadow: var(--shadow-accent);
+  font-size: 0.78rem;
+  color: var(--ink-mute);
 }
-.tier__label {
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: var(--s-3);
-}
-.tier--accent .tier__label { color: var(--accent-tint); }
-.tier__title {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 800;
-  letter-spacing: -0.025em;
+.sponsors-note__file {
   color: var(--ink);
-  margin-bottom: var(--s-3);
-  line-height: 1.1;
+  font-weight: 600;
 }
-.tier--accent .tier__title { color: var(--surface-0); }
-.tier__body {
-  color: var(--text);
-  line-height: 1.55;
-  font-size: 1rem;
+.sponsors-note__body {
+  padding: var(--s-6) var(--s-6) var(--s-5);
+  font-family: var(--font-mono);
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: var(--ink);
 }
-.tier--accent .tier__body { color: rgba(250, 247, 242, 0.85); }
+.sponsors-note__line {
+  display: block;
+  margin: 0;
+  padding-left: 38px;
+  position: relative;
+  min-height: 1lh;
+}
+.sponsors-note__line::before {
+  content: "///";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--ink-faint);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.sponsors-note__line--blank { color: transparent; }
+.sponsors-note__line--sign {
+  color: var(--accent-deep);
+  font-style: italic;
+  font-weight: 600;
+}
 
 .sponsors__cta {
   display: flex;
@@ -1444,7 +1434,8 @@ html.js .reveal.is-visible {
   .meetups__card { padding: var(--s-5); }
   .run-sheet li { grid-template-columns: 54px 1fr; padding: var(--s-3) 0; }
 
-  .sponsor-tiers { gap: var(--s-3); }
+  .sponsors-note__body { padding: var(--s-5) var(--s-4); font-size: 0.86rem; }
+  .sponsors-note__line { padding-left: 32px; }
 
   .team-cards { grid-template-columns: 1fr; }
   .team-card__body { padding: var(--s-4); gap: var(--s-4); }
@@ -1468,7 +1459,7 @@ html.js .reveal.is-visible {
     animation: none !important;
   }
   html.js .reveal { transform: none; }
-  .chip, .pillar, .tier, .value, .btn, .onboard__num, .team-card {
+  .chip, .pillar, .value, .btn, .onboard__num, .team-card {
     transition: none !important;
   }
 }
