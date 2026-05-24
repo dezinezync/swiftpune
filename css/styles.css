@@ -1232,12 +1232,6 @@ body.is-scrolled .site-nav__inner { height: var(--nav-h-compact); }
   font-weight: 700;
   margin-right: 0.3em;
 }
-.values__cta {
-  font-size: 1rem;
-  color: var(--text);
-  line-height: 1.6;
-  max-width: 60ch;
-}
 
 /* ---------- 15. Footer ------------------------------------------------ */
 
