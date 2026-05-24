@@ -507,7 +507,7 @@ body.is-scrolled .site-nav__inner { height: var(--nav-h-compact); }
 .section--meetups    { background: var(--surface-0); }
 .section--recent     { background: var(--surface-1); }
 .section--first      { background: var(--surface-0); }
-.section--organizers { background: var(--surface-1); }
+.section--team       { background: var(--surface-1); }
 .section--sponsors   { background: var(--surface-0); padding-top: 0; }
 .section--values     { background: var(--surface-1); }
 
@@ -992,12 +992,12 @@ body.is-scrolled .site-nav__inner { height: var(--nav-h-compact); }
   line-height: 1.55;
 }
 
-/* ---------- 12. Organizers ------------------------------------------- */
+/* ---------- 12. Core team -------------------------------------------- */
 
-/* team.swift cards — one per organizer.
+/* team.swift cards — one per core team member.
    Each card is its own Swift struct snippet with an avatar slot.
    The wrapper `team-intro` / `team-outro` paragraphs frame the cards
-   as if they were elements inside `let team: [Organizer] = [ ... ]`. */
+   as if they were elements inside `let team: [CoreMember] = [ ... ]`. */
 
 .team-intro,
 .team-outro {
@@ -1127,7 +1127,7 @@ body.is-scrolled .site-nav__inner { height: var(--nav-h-compact); }
   transition: transform var(--dur-fast) var(--ease-out);
 }
 
-.organizers__cta {
+.team__cta {
   text-align: center;
   font-size: 1.05rem;
   color: var(--text);

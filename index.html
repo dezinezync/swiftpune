@@ -59,7 +59,7 @@
           <a href="#stack">Stack</a>
           <a href="#meetups">Meetups</a>
           <a href="#recent">Last meetup</a>
-          <a href="#organizers">Organizers</a>
+          <a href="#core-team">Core team</a>
           <a href="#values">Values</a>
           <a href="https://chat.whatsapp.com/FbfE8mr1aIA8Ac97EHV4yw" target="_blank" rel="noopener" class="nav-cta">
             Join WhatsApp
@@ -86,7 +86,7 @@
           <a href="#meetups">Meetups</a>
           <a href="#recent">Last meetup</a>
           <a href="#first-time">First time?</a>
-          <a href="#organizers">Organizers</a>
+          <a href="#core-team">Core team</a>
           <a href="#sponsors">Sponsors</a>
           <a href="#values">Values</a>
           <a href="https://chat.whatsapp.com/FbfE8mr1aIA8Ac97EHV4yw" target="_blank" rel="noopener">WhatsApp group ↗</a>
@@ -595,30 +595,48 @@
       </section>
 
       <!-- ===========================================================
-           Organizers — honest "we'll introduce them" empty state
+           Core team — the seven who keep this going
            =========================================================== -->
-      <section class="section section--organizers reveal" id="organizers">
+      <section class="section section--team reveal" id="core-team">
         <div class="container">
           <header class="section-head section-head--center">
-            <p class="comment-eyebrow">// organizers</p>
+            <p class="comment-eyebrow">// core_team</p>
             <h2 class="display">
-              The people in the <span class="ink">room</span>.
+              The <span class="ink">core team</span>.
             </h2>
             <p class="lead">
-              Seven of us volunteer the planning, the venues, the run-sheets,
-              and the chai. Different companies, different specialties, same
-              instinct: keep the room small enough to learn in.
+              A small crew of seven. Different companies, different
+              specialties, same instinct: keep the room small enough to
+              actually learn in.
             </p>
           </header>
 
           <p class="team-intro" aria-hidden="true">
-            <span class="tc-kw">let</span> <span class="tc-id">team</span><span class="tc-pn">:</span> [<span class="tc-ty">Organizer</span>] <span class="tc-pn">=</span> [
+            <span class="tc-kw">let</span> <span class="tc-id">team</span><span class="tc-pn">:</span> [<span class="tc-ty">CoreMember</span>] <span class="tc-pn">=</span> [
           </p>
 
-          <div class="team-cards" role="list" aria-label="Team members">
-            <a class="team-card" href="https://www.linkedin.com/in/abhishek-shinde-b1855a127/" target="_blank" rel="noopener" role="listitem">
+          <div class="team-cards" role="list" aria-label="Core team members">
+            <a class="team-card" href="https://www.linkedin.com/in/recursiveswift/" target="_blank" rel="noopener" role="listitem">
               <header class="team-card__head">
                 <span class="team-card__index">team[0]</span>
+                <span class="team-card__arrow" aria-hidden="true">↗</span>
+              </header>
+              <div class="team-card__body">
+                <div class="team-card__avatar team-card__avatar--violet" aria-hidden="true"><span>RJ</span></div>
+                <div class="team-card__code">
+                  <span class="team-card__line"><span class="tc-kw">.init</span>(</span>
+                  <span class="team-card__line">  <span class="tc-pr">name</span><span class="tc-pn">:</span> <span class="tc-str">"Rimesh Jotaniya"</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">role</span><span class="tc-pn">:</span> <span class="tc-en">.theScribe</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">about</span><span class="tc-pn">:</span> <span class="tc-str">"Swift · UIKit · SwiftUI"</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">linkedIn</span><span class="tc-pn">:</span> <span class="tc-ar">↗</span></span>
+                  <span class="team-card__line">)</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="team-card" href="https://www.linkedin.com/in/abhishek-shinde-b1855a127/" target="_blank" rel="noopener" role="listitem">
+              <header class="team-card__head">
+                <span class="team-card__index">team[1]</span>
                 <span class="team-card__arrow" aria-hidden="true">↗</span>
               </header>
               <div class="team-card__body">
@@ -626,26 +644,8 @@
                 <div class="team-card__code">
                   <span class="team-card__line"><span class="tc-kw">.init</span>(</span>
                   <span class="team-card__line">  <span class="tc-pr">name</span><span class="tc-pn">:</span> <span class="tc-str">"Abhishek Shinde"</span>,</span>
-                  <span class="team-card__line">  <span class="tc-pr">role</span><span class="tc-pn">:</span> <span class="tc-en">.organizer</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">role</span><span class="tc-pn">:</span> <span class="tc-en">.theAnchor</span>,</span>
                   <span class="team-card__line">  <span class="tc-pr">about</span><span class="tc-pn">:</span> <span class="tc-str">"Sr. SWE @ Qualys"</span>,</span>
-                  <span class="team-card__line">  <span class="tc-pr">linkedIn</span><span class="tc-pn">:</span> <span class="tc-ar">↗</span></span>
-                  <span class="team-card__line">)</span>
-                </div>
-              </div>
-            </a>
-
-            <a class="team-card" href="https://www.linkedin.com/in/divya-maloo/" target="_blank" rel="noopener" role="listitem">
-              <header class="team-card__head">
-                <span class="team-card__index">team[1]</span>
-                <span class="team-card__arrow" aria-hidden="true">↗</span>
-              </header>
-              <div class="team-card__body">
-                <div class="team-card__avatar team-card__avatar--teal" aria-hidden="true"><span>DM</span></div>
-                <div class="team-card__code">
-                  <span class="team-card__line"><span class="tc-kw">.init</span>(</span>
-                  <span class="team-card__line">  <span class="tc-pr">name</span><span class="tc-pn">:</span> <span class="tc-str">"Divya Maloo"</span>,</span>
-                  <span class="team-card__line">  <span class="tc-pr">role</span><span class="tc-pn">:</span> <span class="tc-en">.moderator</span>,</span>
-                  <span class="team-card__line">  <span class="tc-pr">about</span><span class="tc-pn">:</span> <span class="tc-str">"iOS Eng @ PhonePe"</span>,</span>
                   <span class="team-card__line">  <span class="tc-pr">linkedIn</span><span class="tc-pn">:</span> <span class="tc-ar">↗</span></span>
                   <span class="team-card__line">)</span>
                 </div>
@@ -662,7 +662,7 @@
                 <div class="team-card__code">
                   <span class="team-card__line"><span class="tc-kw">.init</span>(</span>
                   <span class="team-card__line">  <span class="tc-pr">name</span><span class="tc-pn">:</span> <span class="tc-str">"Nikhil Nigade"</span>,</span>
-                  <span class="team-card__line">  <span class="tc-pr">role</span><span class="tc-pn">:</span> <span class="tc-en">.labsLead</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">role</span><span class="tc-pn">:</span> <span class="tc-en">.theBuilder</span>,</span>
                   <span class="team-card__line">  <span class="tc-pr">about</span><span class="tc-pn">:</span> <span class="tc-str">"Founder, Dezine Zync"</span>,</span>
                   <span class="team-card__line">  <span class="tc-pr">linkedIn</span><span class="tc-pn">:</span> <span class="tc-ar">↗</span></span>
                   <span class="team-card__line">)</span>
@@ -670,18 +670,18 @@
               </div>
             </a>
 
-            <a class="team-card" href="https://www.linkedin.com/in/recursiveswift/" target="_blank" rel="noopener" role="listitem">
+            <a class="team-card" href="https://www.linkedin.com/in/divya-maloo/" target="_blank" rel="noopener" role="listitem">
               <header class="team-card__head">
                 <span class="team-card__index">team[3]</span>
                 <span class="team-card__arrow" aria-hidden="true">↗</span>
               </header>
               <div class="team-card__body">
-                <div class="team-card__avatar team-card__avatar--violet" aria-hidden="true"><span>RJ</span></div>
+                <div class="team-card__avatar team-card__avatar--teal" aria-hidden="true"><span>DM</span></div>
                 <div class="team-card__code">
                   <span class="team-card__line"><span class="tc-kw">.init</span>(</span>
-                  <span class="team-card__line">  <span class="tc-pr">name</span><span class="tc-pn">:</span> <span class="tc-str">"Rimesh Jotaniya"</span>,</span>
-                  <span class="team-card__line">  <span class="tc-pr">role</span><span class="tc-pn">:</span> <span class="tc-en">.organizer</span>,</span>
-                  <span class="team-card__line">  <span class="tc-pr">about</span><span class="tc-pn">:</span> <span class="tc-str">"Swift · UIKit · SwiftUI"</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">name</span><span class="tc-pn">:</span> <span class="tc-str">"Divya Maloo"</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">role</span><span class="tc-pn">:</span> <span class="tc-en">.theConductor</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">about</span><span class="tc-pn">:</span> <span class="tc-str">"iOS Eng @ PhonePe"</span>,</span>
                   <span class="team-card__line">  <span class="tc-pr">linkedIn</span><span class="tc-pn">:</span> <span class="tc-ar">↗</span></span>
                   <span class="team-card__line">)</span>
                 </div>
@@ -698,26 +698,8 @@
                 <div class="team-card__code">
                   <span class="team-card__line"><span class="tc-kw">.init</span>(</span>
                   <span class="team-card__line">  <span class="tc-pr">name</span><span class="tc-pn">:</span> <span class="tc-str">"Swetal Matkar"</span>,</span>
-                  <span class="team-card__line">  <span class="tc-pr">role</span><span class="tc-pn">:</span> <span class="tc-en">.organizer</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">role</span><span class="tc-pn">:</span> <span class="tc-en">.theBridge</span>,</span>
                   <span class="team-card__line">  <span class="tc-pr">about</span><span class="tc-pn">:</span> <span class="tc-str">"iOS @ Encoding Solutions"</span>,</span>
-                  <span class="team-card__line">  <span class="tc-pr">linkedIn</span><span class="tc-pn">:</span> <span class="tc-ar">↗</span></span>
-                  <span class="team-card__line">)</span>
-                </div>
-              </div>
-            </a>
-
-            <a class="team-card" href="https://www.linkedin.com/in/msusare/" target="_blank" rel="noopener" role="listitem">
-              <header class="team-card__head">
-                <span class="team-card__index">team[5]</span>
-                <span class="team-card__arrow" aria-hidden="true">↗</span>
-              </header>
-              <div class="team-card__body">
-                <div class="team-card__avatar team-card__avatar--blue" aria-hidden="true"><span>MS</span></div>
-                <div class="team-card__code">
-                  <span class="team-card__line"><span class="tc-kw">.init</span>(</span>
-                  <span class="team-card__line">  <span class="tc-pr">name</span><span class="tc-pn">:</span> <span class="tc-str">"MaYur SuSare"</span>,</span>
-                  <span class="team-card__line">  <span class="tc-pr">role</span><span class="tc-pn">:</span> <span class="tc-en">.organizer</span>,</span>
-                  <span class="team-card__line">  <span class="tc-pr">about</span><span class="tc-pn">:</span> <span class="tc-str">"iOS · MVVM · remote"</span>,</span>
                   <span class="team-card__line">  <span class="tc-pr">linkedIn</span><span class="tc-pn">:</span> <span class="tc-ar">↗</span></span>
                   <span class="team-card__line">)</span>
                 </div>
@@ -726,7 +708,7 @@
 
             <a class="team-card" href="https://www.linkedin.com/in/ganesh-patil-2b3431119/" target="_blank" rel="noopener" role="listitem">
               <header class="team-card__head">
-                <span class="team-card__index">team[6]</span>
+                <span class="team-card__index">team[5]</span>
                 <span class="team-card__arrow" aria-hidden="true">↗</span>
               </header>
               <div class="team-card__body">
@@ -734,8 +716,26 @@
                 <div class="team-card__code">
                   <span class="team-card__line"><span class="tc-kw">.init</span>(</span>
                   <span class="team-card__line">  <span class="tc-pr">name</span><span class="tc-pn">:</span> <span class="tc-str">"Ganesh Patil"</span>,</span>
-                  <span class="team-card__line">  <span class="tc-pr">role</span><span class="tc-pn">:</span> <span class="tc-en">.organizer</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">role</span><span class="tc-pn">:</span> <span class="tc-en">.theMentor</span>,</span>
                   <span class="team-card__line">  <span class="tc-pr">about</span><span class="tc-pn">:</span> <span class="tc-str">"Sr. iOS · CoreLearnly"</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">linkedIn</span><span class="tc-pn">:</span> <span class="tc-ar">↗</span></span>
+                  <span class="team-card__line">)</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="team-card" href="https://www.linkedin.com/in/msusare/" target="_blank" rel="noopener" role="listitem">
+              <header class="team-card__head">
+                <span class="team-card__index">team[6]</span>
+                <span class="team-card__arrow" aria-hidden="true">↗</span>
+              </header>
+              <div class="team-card__body">
+                <div class="team-card__avatar team-card__avatar--blue" aria-hidden="true"><span>MS</span></div>
+                <div class="team-card__code">
+                  <span class="team-card__line"><span class="tc-kw">.init</span>(</span>
+                  <span class="team-card__line">  <span class="tc-pr">name</span><span class="tc-pn">:</span> <span class="tc-str">"MaYur SuSare"</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">role</span><span class="tc-pn">:</span> <span class="tc-en">.theNomad</span>,</span>
+                  <span class="team-card__line">  <span class="tc-pr">about</span><span class="tc-pn">:</span> <span class="tc-str">"iOS · MVVM · remote"</span>,</span>
                   <span class="team-card__line">  <span class="tc-pr">linkedIn</span><span class="tc-pn">:</span> <span class="tc-ar">↗</span></span>
                   <span class="team-card__line">)</span>
                 </div>
@@ -745,7 +745,7 @@
 
           <p class="team-outro" aria-hidden="true">]</p>
 
-          <p class="organizers__cta">
+          <p class="team__cta">
             Speaking is the fastest path to knowing everyone.
             <a class="link" href="https://www.linkedin.com/company/swiftpune/" target="_blank" rel="noopener">
               Pitch a talk via LinkedIn
@@ -846,9 +846,9 @@
             </a>.
             Concerns go via DM to
             <a class="link" href="https://www.linkedin.com/in/divya-maloo/" target="_blank" rel="noopener">Divya</a>
-            or any organizer on
-            <a class="link" href="https://www.linkedin.com/company/swiftpune/" target="_blank" rel="noopener">LinkedIn</a> —
-            handled by a rotating pair of organizers, with confidentiality.
+            or any
+            <a class="link" href="#core-team">core team member</a>
+            — handled by a rotating pair, with confidentiality.
           </p>
         </div>
       </section>
