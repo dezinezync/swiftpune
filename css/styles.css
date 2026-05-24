@@ -1205,7 +1205,71 @@ body.is-scrolled .site-nav__inner { height: var(--nav-h-compact); }
 }
 .tier--accent .tier__body { color: rgba(250, 247, 242, 0.85); }
 
-.sponsors__cta { text-align: center; margin-top: var(--s-5); }
+.sponsors__cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--s-3);
+  margin-top: var(--s-5);
+}
+
+/* Hosts history — a small honor-roll row showing which companies
+   have hosted so far, with an open dashed slot for the next one. */
+.hosts-log {
+  display: grid;
+  gap: var(--s-3);
+  margin: var(--s-7) auto var(--s-6);
+  max-width: 820px;
+}
+.hosts-log__eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  color: var(--ink-mute);
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+.hosts-log__list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--s-3);
+  padding: 0;
+}
+.hosts-log__item {
+  display: grid;
+  gap: 6px;
+  padding: var(--s-4);
+  background: var(--surface-2);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-1);
+  text-align: center;
+}
+.hosts-log__item--open {
+  background: transparent;
+  border-style: dashed;
+  border-color: var(--accent-tint);
+  box-shadow: none;
+}
+.hosts-log__sid {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+.hosts-log__item--open .hosts-log__sid { color: var(--ink-mute); }
+.hosts-log__name {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  color: var(--ink);
+  font-weight: 700;
+}
+.hosts-log__item--open .hosts-log__name {
+  color: var(--ink-mute);
+  font-style: italic;
+  font-weight: 600;
+}
 
 /* ---------- 14. Values ----------------------------------------------- */
 
