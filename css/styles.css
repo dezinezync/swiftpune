@@ -900,52 +900,96 @@ body.is-scrolled .site-nav__inner { height: var(--nav-h-compact); }
 
 .section--first .container { position: relative; z-index: 2; }
 
-.checks {
+/* Onboarding — vertical numbered timeline for "Coming for the first time?"
+   A single rail of circular step nodes with content stacked to the right
+   of each. Code-comment eyebrows ("// pack", "// wear", …) tie the steps
+   back to the site's overall voice. */
+
+.onboard {
   list-style: none;
+  padding: 0;
+  margin: var(--s-7) 0 0;
   display: grid;
-  gap: var(--s-4);
-  margin: var(--s-7) 0 var(--s-6);
+  gap: 0;
+  position: relative;
 }
-.checks li {
+.onboard__step {
   display: grid;
-  grid-template-columns: 36px 1fr;
-  gap: var(--s-4);
+  grid-template-columns: 72px 1fr;
+  gap: var(--s-5);
+  padding: var(--s-3) 0;
   align-items: start;
-  padding: var(--s-5) var(--s-5);
-  background: var(--surface-2);
-  border: 1px solid var(--hairline);
-  border-radius: var(--r-md);
-  box-shadow: var(--shadow-1);
-  transition: transform var(--dur-fast) var(--ease-out),
-              box-shadow var(--dur-fast) var(--ease-out);
 }
-.checks li:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-2);
-}
-.checks__mark {
-  display: inline-flex;
-  align-items: center;
+.onboard__rail {
+  position: relative;
+  display: flex;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--accent-tint);
-  color: var(--accent);
+  padding-top: 4px;
+  align-self: stretch;
 }
-.checks__mark svg { width: 20px; height: 20px; }
-.checks strong {
+/* Dashed connecting line between numbered nodes — matches run-sheet idiom. */
+.onboard__rail::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 56px;
+  bottom: -16px;
+  width: 0;
+  border-left: 2px dashed var(--accent-tint);
+  transform: translateX(-1px);
+  z-index: 0;
+}
+.onboard__step:last-child .onboard__rail::before { display: none; }
+
+.onboard__num {
+  position: relative;
+  z-index: 1;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--surface-2);
+  border: 2px solid var(--accent);
+  color: var(--accent-deep);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  box-shadow: var(--shadow-1);
+  transition:
+    transform var(--dur-fast) var(--ease-out),
+    background var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
+}
+.onboard__step:hover .onboard__num {
+  transform: scale(1.04);
+  background: var(--accent);
+  color: #FFF;
+}
+
+.onboard__body {
+  padding: 2px 0 var(--s-4);
+}
+.onboard__eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  color: var(--ink-mute);
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+.onboard__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.2vw + 0.95rem, 1.4rem);
   color: var(--ink);
   font-weight: 700;
-  display: block;
-  margin-bottom: 4px;
+  line-height: 1.3;
+  margin-bottom: 8px;
 }
-.checks li > div { color: var(--text); line-height: 1.55; }
-
-.first__cta {
-  margin-top: var(--s-6);
-  font-size: 1.05rem;
+.onboard__text {
   color: var(--text);
+  font-size: 1.02rem;
+  line-height: 1.55;
 }
 
 /* ---------- 12. Organizers ------------------------------------------- */
@@ -1329,8 +1373,10 @@ html.js .reveal.is-visible {
   .display { font-size: clamp(2rem, 8vw, 2.8rem); }
   .lead { font-size: 1.05rem; }
 
-  .pillars, .checks { gap: var(--s-4); }
-  .checks li { padding: var(--s-4); }
+  .pillars { gap: var(--s-4); }
+  .onboard__step { grid-template-columns: 56px 1fr; gap: var(--s-4); }
+  .onboard__num { width: 44px; height: 44px; font-size: 0.95rem; }
+  .onboard__rail::before { top: 48px; }
   .meetups__card { padding: var(--s-5); }
   .run-sheet li { grid-template-columns: 54px 1fr; padding: var(--s-3) 0; }
 
@@ -1358,7 +1404,7 @@ html.js .reveal.is-visible {
     animation: none !important;
   }
   html.js .reveal { transform: none; }
-  .chip, .pillar, .tier, .value, .btn, .checks li {
+  .chip, .pillar, .tier, .value, .btn, .onboard__num, .team-card {
     transition: none !important;
   }
 }
