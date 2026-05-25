@@ -503,7 +503,7 @@ body.is-scrolled .site-nav__inner { height: var(--nav-h-compact); }
 }
 .section--about      { background: var(--surface-0); }
 .section--stack      { background: var(--surface-1); }
-.section--pillars    { background: var(--surface-0); }
+.section--why        { background: var(--surface-0); }
 .section--meetups    { background: var(--surface-0); }
 .section--recent     { background: var(--surface-1); }
 .section--first      { background: var(--surface-0); }
@@ -577,82 +577,56 @@ body.is-scrolled .site-nav__inner { height: var(--nav-h-compact); }
   transform: translateY(-2px);
 }
 
-/* ---------- 9. Pillars ----------------------------------------------- */
+/* ---------- 9. Why this room exists (editorial reasons stack) -------- */
 
-.pillars {
+/* No cards, no badges. Each reason is a short bold lead in display font
+   plus a body paragraph in regular text, separated by hairline dividers
+   that match the run-sheet/onboard idiom. */
+
+.reasons {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--s-5);
+  gap: var(--s-7);
   margin-top: var(--s-7);
-  list-style: none;
 }
-.pillar {
-  position: relative;
-  padding: var(--s-7) var(--s-6) var(--s-6);
-  background: var(--surface-2);
-  border: 1px solid var(--hairline);
-  border-radius: var(--r-lg);
-  box-shadow: var(--shadow-1);
-  transition:
-    transform var(--dur-mid) var(--ease-out),
-    box-shadow var(--dur-mid) var(--ease-out),
-    border-color var(--dur-fast) var(--ease-out);
+.reason {
+  padding-top: var(--s-6);
+  border-top: 1px solid var(--hairline);
+  display: grid;
+  gap: var(--s-4);
 }
-.pillar:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-2);
-  border-color: var(--ink-faint);
+.reason:first-child {
+  padding-top: 0;
+  border-top: 0;
 }
-.pillar--accent {
-  background: var(--accent);
-  color: #FFF;
-  border-color: var(--accent-deep);
-  box-shadow: var(--shadow-accent);
+.reason__lead {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.4vw + 0.8rem, 2.1rem);
+  color: var(--ink);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 0;
 }
-.pillar--accent:hover {
-  background: var(--accent-deep);
-  box-shadow: 0 14px 32px -10px rgba(233, 75, 107, 0.5);
-  border-color: var(--accent-deep);
-}
-
-.pillar__num {
+.reason__num {
   display: inline-block;
   font-family: var(--font-mono);
-  font-size: 0.95rem;
+  font-size: 0.55em;
   color: var(--accent);
-  font-weight: 600;
-  margin-bottom: var(--s-4);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  vertical-align: 0.55em;
+  margin-right: 0.65em;
+  padding: 0.15em 0.45em;
+  border: 1px solid var(--accent-tint);
+  border-radius: var(--r-pill);
+  background: var(--surface-2);
 }
-.pillar--accent .pillar__num { color: var(--accent-tint); }
-
-.pillar__title {
-  font-family: var(--font-display);
-  font-size: var(--fs-h3);
-  font-weight: 800;
-  letter-spacing: -0.028em;
-  color: var(--ink);
-  margin-bottom: var(--s-3);
-  line-height: 1.05;
-}
-.pillar--accent .pillar__title { color: #FFF; }
-
-.pillar__body {
+.reason__body {
+  font-size: 1.08rem;
   color: var(--text);
-  line-height: 1.55;
-  margin-bottom: var(--s-5);
-}
-.pillar--accent .pillar__body { color: rgba(255, 255, 255, 0.94); }
-
-.pillar__for {
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  color: var(--ink-mute);
-  border-top: 1px dashed var(--hairline);
-  padding-top: var(--s-3);
-}
-.pillar--accent .pillar__for {
-  color: rgba(255, 255, 255, 0.85);
-  border-top-color: rgba(255, 255, 255, 0.2);
+  line-height: 1.6;
+  max-width: 60ch;
+  margin: 0;
 }
 
 /* ---------- 10. Meetups ---------------------------------------------- */
@@ -1360,7 +1334,8 @@ html.js .reveal.is-visible {
   .display { font-size: clamp(2rem, 8vw, 2.8rem); }
   .lead { font-size: 1.05rem; }
 
-  .pillars { gap: var(--s-4); }
+  .reasons { gap: var(--s-6); }
+  .reason { padding-top: var(--s-5); }
   .onboard__step { grid-template-columns: 56px 1fr; gap: var(--s-4); }
   .onboard__num { width: 44px; height: 44px; font-size: 0.95rem; }
   .onboard__rail::before { top: 48px; }
@@ -1390,7 +1365,7 @@ html.js .reveal.is-visible {
     animation: none !important;
   }
   html.js .reveal { transform: none; }
-  .chip, .pillar, .value, .btn, .onboard__num, .crew__member {
+  .chip, .value, .btn, .onboard__num, .crew__member {
     transition: none !important;
   }
 }
