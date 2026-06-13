@@ -148,4 +148,32 @@
       if (history.pushState) history.pushState(null, "", id);
     });
   });
+
+  /* -- Event photo galleries (auto-advancing, timed dot-nav) ----------
+     Slides scroll horizontally; the active dot's progress fill is a CSS
+     animation. We only wire dot clicks and advance when a fill completes —
+     hover/focus pause and reduced-motion are handled entirely in CSS. */
+  document.querySelectorAll("[data-gallery]").forEach((gallery) => {
+    const track = gallery.querySelector(".gallery__track");
+    const slides = Array.from(gallery.querySelectorAll(".gallery__slide"));
+    const dots = Array.from(gallery.querySelectorAll(".gallery__dot"));
+    if (!track || slides.length < 2) return;
+
+    let index = 0;
+    const go = (i) => {
+      index = (i + slides.length) % slides.length;
+      track.style.transform = `translateX(${index * -100}%)`;
+      dots.forEach((dot, di) => dot.classList.toggle("is-active", di === index));
+    };
+
+    dots.forEach((dot, di) => dot.addEventListener("click", () => go(di)));
+
+    gallery.addEventListener("animationend", (e) => {
+      if (e.animationName !== "gallery-fill") return;
+      const dot = e.target.closest(".gallery__dot");
+      if (dot && dot.classList.contains("is-active")) go(index + 1);
+    });
+
+    go(0);
+  });
 })();

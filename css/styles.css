@@ -725,6 +725,104 @@ a { color: inherit; text-decoration: none; }
 }
 .initiative__note { margin-top: var(--s-5); }
 
+/* ---------- 9c. Photo gallery (auto-advancing timed dot-nav) -------- */
+
+/* Inspired by Apple's timed dot-nav: the slides scroll horizontally and the
+   active dot fills a progress track over the interval, then advances. Fills
+   are CSS-animated, so hover/focus pause (and clicking a dot restarts) come
+   for free; JS only wires clicks and the advance-on-fill-complete. */
+.gallery { position: absolute; inset: 0; z-index: 1; }
+.gallery__track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.7s var(--ease-out);
+  will-change: transform;
+}
+.gallery__slide {
+  flex: 0 0 100%;
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+}
+.gallery__slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Bottom scrim so the dots stay legible over light placeholders and photos. */
+.gallery__scrim {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 72px;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(20, 18, 30, 0.38), transparent);
+}
+
+.gallery__dots {
+  position: absolute;
+  z-index: 3;
+  left: 0; right: 0;
+  bottom: var(--s-4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.gallery__dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--r-pill);
+  background: rgba(255, 255, 255, 0.55);
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-appearance: none;
+          appearance: none;
+  transition:
+    width var(--dur-mid) var(--ease-out),
+    background var(--dur-fast) var(--ease-out);
+}
+.gallery__dot:hover { background: rgba(255, 255, 255, 0.85); }
+.gallery__dot:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.gallery__dot.is-active {
+  width: 34px;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: default;
+}
+.gallery__dot-fill {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: #fff;
+  border-radius: inherit;
+}
+.gallery__dot.is-active .gallery__dot-fill {
+  animation: gallery-fill var(--gallery-delay, 4500ms) linear forwards;
+}
+/* Pause the countdown while the visitor is looking/interacting. */
+.gallery:hover .gallery__dot.is-active .gallery__dot-fill,
+.gallery:focus-within .gallery__dot.is-active .gallery__dot-fill {
+  animation-play-state: paused;
+}
+@keyframes gallery-fill {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+/* S002 recap gets the same gallery as a wide banner above the agenda. */
+.recap__gallery {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--r-xl);
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow-2);
+  margin-bottom: var(--s-7);
+}
+@media (max-width: 720px) {
+  .recap__gallery { aspect-ratio: 4 / 3; }
+}
+
 /* ---------- 10. Meetups ---------------------------------------------- */
 
 .meetups {
@@ -1578,5 +1676,12 @@ html.js .reveal.is-visible .reveal-up {
   }
   .btn, .onboard__num, .crew__member, .work-card {
     transition: none !important;
+  }
+  /* No auto-advance or progress animation; the active dot just shows filled.
+     Dots stay clickable. */
+  .gallery__track { transition: none !important; }
+  .gallery__dot.is-active .gallery__dot-fill {
+    animation: none !important;
+    width: 100%;
   }
 }
