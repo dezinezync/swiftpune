@@ -164,21 +164,13 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- 4. Site nav ----------------------------------------------- */
 
+/* Non-sticky: the header flows in normal document order and scrolls away
+   with the page (reclaims screen space, especially on mobile). Kept as a
+   positioned element so its z-index still stacks above the mobile menu. */
 .site-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
+  position: relative;
   z-index: 50;
-  background: rgba(250, 247, 242, 0.78);
-  -webkit-backdrop-filter: blur(14px) saturate(170%);
-          backdrop-filter: blur(14px) saturate(170%);
-  border-bottom: 1px solid transparent;
-  transition:
-    background var(--dur-fast) var(--ease-out),
-    border-color var(--dur-fast) var(--ease-out);
-}
-body.is-scrolled .site-nav {
-  background: rgba(250, 247, 242, 0.92);
-  border-bottom-color: var(--hairline);
+  background: var(--surface-0);
 }
 .site-nav__inner {
   max-width: var(--container-wide);
@@ -189,9 +181,7 @@ body.is-scrolled .site-nav {
   align-items: center;
   justify-content: space-between;
   gap: var(--s-5);
-  transition: height var(--dur-fast) var(--ease-out);
 }
-body.is-scrolled .site-nav__inner { height: var(--nav-h-compact); }
 
 .brand {
   display: inline-flex;
@@ -326,7 +316,7 @@ body.is-scrolled .site-nav__inner { height: var(--nav-h-compact); }
 
 .hero {
   position: relative;
-  padding: calc(var(--nav-h) + var(--s-9)) 0 var(--s-10);
+  padding: var(--s-8) 0 var(--s-10);
   overflow: hidden;
   isolation: isolate;
 }
@@ -895,7 +885,7 @@ body.is-scrolled .site-nav__inner { height: var(--nav-h-compact); }
   padding: var(--s-6);
   box-shadow: var(--shadow-1);
   position: sticky;
-  top: calc(var(--nav-h) + var(--s-4));
+  top: var(--s-5);
 }
 .recap__meta-block { display: grid; gap: 6px; }
 .recap__meta-eyebrow {
@@ -1371,7 +1361,7 @@ body.is-scrolled .site-nav__inner { height: var(--nav-h-compact); }
 
 .section--doc {
   background: var(--surface-0);
-  padding-top: calc(var(--nav-h) + var(--s-8));
+  padding-top: var(--s-8);
   min-height: 68vh;
 }
 .section--doc .display { margin-bottom: var(--s-5); }
@@ -1452,7 +1442,7 @@ html.js .reveal.is-visible .reveal-up {
 }
 
 @media (max-width: 720px) {
-  .hero { padding-top: calc(var(--nav-h) + var(--s-7)); padding-bottom: var(--s-9); }
+  .hero { padding-top: var(--s-6); padding-bottom: var(--s-9); }
   .hero__title { font-size: clamp(2.4rem, 11vw, 4rem); line-height: 1.02; }
   .hero__sub { font-size: 1.05rem; }
   .hero__blob--accent { width: 380px; height: 380px; opacity: 0.08; }

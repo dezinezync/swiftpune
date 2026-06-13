@@ -129,7 +129,9 @@
     members.forEach((m) => crew.appendChild(m));
   }
 
-  /* -- Smooth-scroll offset for sticky nav ---------------------------- */
+  /* -- Smooth-scroll to in-page anchors ------------------------------- */
+  /* The nav is non-sticky, so no nav-height offset is needed — just a
+     small breathing-room gap above the target. */
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (e) => {
       const id = link.getAttribute("href");
@@ -137,9 +139,8 @@
       const target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
-      const navHeight = nav ? nav.getBoundingClientRect().height : 0;
       const top =
-        target.getBoundingClientRect().top + window.scrollY - navHeight - 12;
+        target.getBoundingClientRect().top + window.scrollY - 16;
       window.scrollTo({
         top,
         behavior: reduceMotion ? "auto" : "smooth",
