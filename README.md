@@ -18,52 +18,6 @@ visionOS, and server-side Swift) in Pune, India.
 It leads with our actual work — meetups, campus outreach, and community nights —
 rather than mission statements.
 
-## What's on the site
-
-- **Our work** — a bento overview linking to a dedicated section for each
-  initiative: meetups **S001** and **S002** (with a full recap), the **Swift
-  Student Outreach** program (first session at Vishwakarma University), and the
-  **WWDC26 watch party**. Each event section has an auto-advancing photo gallery.
-- **Meetups** — how a typical session runs.
-- **First time?** — what to expect on your first visit.
-- **Core team** — the volunteers who keep it going.
-- **Sponsors / hosts** — how companies can host a meetup.
-- **Code of conduct** — `code-of-conduct.html`.
-
-## Tech
-
-No framework, no build step — just hand-written **HTML, CSS, and a little vanilla
-JS**. The design language ("Studio Pune") uses the Apple system font stack, a warm
-off-white palette with a single coral accent, code-comment-style eyebrows, and
-the logo's bubble shape language. Motion is CSS-driven and honors
-`prefers-reduced-motion`.
-
-```
-.
-├── index.html              # the whole site, one page
-├── code-of-conduct.html    # community code of conduct
-├── css/
-│   ├── reset.css
-│   ├── tokens.css          # design tokens (palette, type scale, spacing, motion)
-│   └── styles.css          # all component styles
-├── js/
-│   └── main.js             # nav, scroll-reveals, photo galleries
-└── assets/
-    ├── SPLogo.png          # the logo / hero mark
-    ├── og-image.png        # social link-preview card (1200×630)
-    ├── CoreTeam/           # core-team headshots
-    └── Events/             # event photos (S001, S002, outreach, watch party)
-```
-
-## Run it locally
-
-It's a static site, so any static server works:
-
-```sh
-python3 -m http.server 8753
-# then open http://localhost:8753/
-```
-
 ## Get involved
 
 - **WhatsApp** — the fastest way to hear about the next meetup
