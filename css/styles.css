@@ -1298,8 +1298,9 @@ body.is-scrolled .site-nav__inner { height: var(--nav-h-compact); }
 }
 .site-footer__brand {
   display: flex;
-  align-items: center;
-  gap: var(--s-4);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--s-3);
 }
 .site-footer__brand img {
   width: 52px;
@@ -1350,6 +1351,14 @@ body.is-scrolled .site-nav__inner { height: var(--nav-h-compact); }
   padding-top: var(--s-5);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
+.site-footer__trademark {
+  font-size: 0.72rem;
+  line-height: 1.55;
+  color: var(--ink-faint);
+  max-width: 78ch;
+  margin-bottom: var(--s-4);
+}
+.site-footer__copyline { margin: 0; }
 .site-footer__legal code {
   background: transparent;
   border: 0;
@@ -1357,6 +1366,26 @@ body.is-scrolled .site-nav__inner { height: var(--nav-h-compact); }
   color: var(--ink-faint);
   font-size: 0.78rem;
 }
+
+/* ---------- 15b. Sub-pages (Code of conduct, etc.) ------------------- */
+
+.section--doc {
+  background: var(--surface-0);
+  padding-top: calc(var(--nav-h) + var(--s-8));
+  min-height: 68vh;
+}
+.section--doc .display { margin-bottom: var(--s-5); }
+.doc-note {
+  margin-top: var(--s-7);
+  max-width: 640px;
+}
+.doc-note__text {
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: var(--s-5);
+}
+.doc-back { margin-top: var(--s-7); }
 
 /* ---------- 16. Reveal motion ---------------------------------------- */
 
