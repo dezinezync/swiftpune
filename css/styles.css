@@ -1365,17 +1365,93 @@ a { color: inherit; text-decoration: none; }
   min-height: 68vh;
 }
 .section--doc .display { margin-bottom: var(--s-5); }
-.doc-note {
-  margin-top: var(--s-7);
-  max-width: 640px;
+
+/* Code-of-conduct policy: numbered sections with coral-dot bullet lists,
+   separated by the same hairline idiom used elsewhere on the site. */
+.policy {
+  display: grid;
+  gap: var(--s-7);
+  margin-top: var(--s-8);
 }
-.doc-note__text {
+.policy__section {
+  display: grid;
+  gap: var(--s-4);
+  padding-top: var(--s-6);
+  border-top: 1px solid var(--hairline);
+}
+.policy__section:first-child { padding-top: 0; border-top: 0; }
+.policy__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 1.4vw + 0.95rem, 1.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--ink);
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+}
+.policy__num {
+  font-family: var(--font-mono);
+  font-size: 0.6em;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  padding: 0.2em 0.55em;
+  border: 1px solid var(--accent-tint);
+  border-radius: var(--r-pill);
+  background: var(--surface-2);
+  flex-shrink: 0;
+}
+.policy__list {
+  list-style: none;
+  display: grid;
+  gap: var(--s-3);
+  margin: 0;
+  padding: 0;
+}
+.policy__list li {
+  position: relative;
+  padding-left: 1.5em;
   color: var(--text);
   font-size: 1.05rem;
   line-height: 1.6;
-  margin-bottom: var(--s-5);
+  max-width: 68ch;
 }
-.doc-back { margin-top: var(--s-7); }
+.policy__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.policy__close {
+  margin-top: var(--s-8);
+  padding-top: var(--s-6);
+  border-top: 1px solid var(--hairline);
+  display: grid;
+  gap: var(--s-5);
+  justify-items: start;
+}
+.policy__close-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 68ch;
+}
+.policy__scope {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--ink-mute);
+  line-height: 1.55;
+  max-width: 68ch;
+}
+
+.doc-back { margin-top: var(--s-8); }
 
 /* ---------- 16. Reveal motion ---------------------------------------- */
 
