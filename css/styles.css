@@ -443,18 +443,6 @@ body.is-scrolled .site-nav__inner { height: var(--nav-h-compact); }
   color: var(--ink);
   font-weight: 800;
 }
-.hero__highlight {
-  display: inline-block;
-  color: var(--accent);
-  font-weight: 800;
-  font-style: italic;
-  position: relative;
-}
-.hero__highlight-dot {
-  display: inline-block;
-  color: var(--accent);
-  transform: translateY(2px);
-}
 
 .hero__sub {
   font-size: var(--fs-lead);
@@ -501,83 +489,18 @@ body.is-scrolled .site-nav__inner { height: var(--nav-h-compact); }
   position: relative;
   isolation: isolate;
 }
-.section--about      { background: var(--surface-0); }
 .section--work       { background: var(--surface-1); }
-.section--stack      { background: var(--surface-0); }
-.section--meetups    { background: var(--surface-1); }
-.section--s001       { background: var(--surface-0); }
-.section--recent     { background: var(--surface-1); }
-.section--outreach   { background: var(--surface-0); }
-.section--wwdc       { background: var(--surface-1); }
-.section--first      { background: var(--surface-0); }
-.section--team       { background: var(--surface-1); }
-.section--sponsors   { background: var(--surface-0); }
+.section--meetups    { background: var(--surface-0); }
+.section--s001       { background: var(--surface-1); }
+.section--recent     { background: var(--surface-0); }
+.section--outreach   { background: var(--surface-1); }
+.section--wwdc       { background: var(--surface-0); }
+.section--first      { background: var(--surface-1); }
+.section--team       { background: var(--surface-0); }
+.section--sponsors   { background: var(--surface-1); }
 
 .section-head { margin-bottom: var(--s-8); }
 .section-head--center { text-align: center; margin-inline: auto; max-width: 64ch; }
-
-/* ---------- 7. About -------------------------------------------------- */
-
-.section--about .display { font-size: var(--fs-h2); margin-bottom: var(--s-6); }
-
-/* ---------- 8. Stack — topic chips ------------------------------------ */
-
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s-3);
-  margin-top: var(--s-7);
-  list-style: none;
-}
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.55rem 1rem;
-  background: var(--surface-2);
-  border: 1px solid var(--hairline);
-  border-radius: var(--r-pill);
-  font-family: var(--font-mono);
-  font-size: var(--fs-chip);
-  color: var(--ink);
-  box-shadow: var(--shadow-1);
-  transition:
-    transform var(--dur-fast) var(--ease-press),
-    box-shadow var(--dur-fast) var(--ease-out),
-    border-color var(--dur-fast) var(--ease-out);
-  cursor: default;
-}
-.chip:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-2);
-  border-color: var(--ink-faint);
-}
-.chip__dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  background: var(--accent);
-}
-.chip__dot--coral  { background: var(--accent); }
-.chip__dot--teal   { background: var(--bubble-teal); }
-.chip__dot--green  { background: var(--bubble-green); }
-.chip__dot--violet { background: var(--bubble-violet); }
-.chip__dot--orange { background: var(--bubble-orange); }
-.chip__dot--blue   { background: var(--bubble-blue); }
-
-.chip--more {
-  background: transparent;
-  border: 1.5px dashed var(--ink-faint);
-  color: var(--ink-mute);
-  font-style: italic;
-  box-shadow: none;
-}
-.chip--more:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-2px);
-}
 
 /* ---------- 9. Our work — initiatives bento ------------------------- */
 
@@ -1354,39 +1277,6 @@ body.is-scrolled .site-nav__inner { height: var(--nav-h-compact); }
   font-weight: 600;
 }
 
-/* ---------- 14. Footer socials --------------------------------------- */
-
-.socials {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  list-style: none;
-  margin-top: var(--s-4);
-  padding: 0;
-}
-.social {
-  width: 40px;
-  height: 40px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  color: var(--ink-faint);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  transition:
-    color var(--dur-fast) var(--ease-out),
-    background var(--dur-fast) var(--ease-out),
-    border-color var(--dur-fast) var(--ease-out),
-    transform var(--dur-fast) var(--ease-press);
-}
-.social:hover {
-  color: #FFF;
-  background: var(--accent);
-  border-color: var(--accent);
-  transform: translateY(-2px);
-}
-
 /* ---------- 15. Footer ------------------------------------------------ */
 
 .site-footer {
@@ -1591,7 +1481,7 @@ html.js .reveal.is-visible .reveal-up {
     transform: none;
     transition: none !important;
   }
-  .chip, .btn, .onboard__num, .crew__member, .work-card, .social {
+  .btn, .onboard__num, .crew__member, .work-card {
     transition: none !important;
   }
 }
