@@ -1667,6 +1667,12 @@ a { color: inherit; text-decoration: none; }
   max-width: 78ch;
   margin-bottom: var(--s-4);
 }
+.site-footer__trademark a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.site-footer__trademark a:hover { color: var(--surface-0); }
 .site-footer__copyline { margin: 0; }
 .site-footer__legal code {
   background: transparent;
