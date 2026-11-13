@@ -11,6 +11,7 @@
 import { photos } from "../_lib/photos.js";
 import site from "./site.js";
 
+const C003 = photos("assets/Events/Casuals/003", "jpg");
 const C002 = photos("assets/Events/Casuals/002", "jpg");
 const C001 = photos("assets/Events/Casuals/001", "jpg");
 const WWDC26 = photos("assets/Events/watchparty/wwdc26", "jpg");
@@ -27,10 +28,40 @@ export default {
     desc: "No talks, no agenda. A long table at a Pune restaurant, plus the WWDC keynote on a big screen every June.",
     unit: ["casual", "casuals"],
     cta: "Every casual",
-    image: C002(1, "The SwiftPune casual group at Babylon Craft Brewery, Pune"),
+    image: C003(1, "SwiftPune students around a long brunch table at Chirp, Pune"),
   },
 
   events: [
+    {
+      key: "C003",
+      name: "Chirp & TOIT, Pune",
+      date: "2026-10-24",
+      title: 'Brunch for students, <span class="ink">dinner</span> for professionals.',
+      lead: `Two tables on one Saturday. Students took over a long
+        brunch table at Chirp, then the working crowd met for dinner
+        at TOIT, and both ran long on side projects, first jobs and
+        what everyone is shipping next.`,
+      summary: `Two tables on one Saturday: a students' brunch at
+        Chirp, then dinner for professionals at TOIT.`,
+      facts: [
+        ["Students' brunch", "Chirp — Eat. Play. Work., Pune"],
+        ["Professionals' dinner", "TOIT, Pune"],
+        ["When", "Saturday, October 24, 2026"],
+      ],
+      note: { href: site.whatsapp, label: "Hear about the next one on WhatsApp" },
+      photos: {
+        label: "C003 photos",
+        items: [
+          C003(1, "SwiftPune students around a long brunch table at Chirp, Pune"),
+          C003(2, "A group selfie down the brunch table at Chirp"),
+          C003(3, "The students' brunch table under the canopy at Chirp", { width: 960, variants: [640] }),
+          C003(4, "SwiftPune professionals at a long dinner table at TOIT, Pune"),
+          C003(5, "A group selfie over dinner at TOIT"),
+          C003(6, "The professionals' dinner table at TOIT"),
+        ],
+      },
+    },
+
     {
       key: "C002",
       name: "Babylon Craft Brewery, Pune",
